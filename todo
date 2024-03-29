@@ -1,0 +1,52 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    todo                                               :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ssottori <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/03/27 15:01:38 by ssottori          #+#    #+#              #
+#    Updated: 2024/03/27 15:11:11 by ssottori         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+Map Checklist
+============
+Parse the map
+	Open map and count lines
+	Create 2d array
+Some checks:
+	Does the map file exist ?
+	Is the map rectangular ? (All the lines should be the same length.)
+	Is there something in the map file ?
+	Is the map enclosed in walls ? '1'
+		(Check the first and last lines and columns, they should all be 1)
+	Is there only one exit ? 'E'
+		(count how many 'E' you find on the map)
+	Is there only one start position ?
+		(count how many 'P' you find on the map)
+	Is there at least one collectible?
+		(count how many 'C' you find on the map)
+	Calculate window size depending on map, and sprite size.
+	Are all the collectibles and the Exit accessible from the start position?
+	if not all collectibles are accessible, the map is invalid
+
+Game checklist
+==============
+Create a window using MiniLibX
+Create the required struct to store all the necessary information
+Make sure all your sprites are 32x32
+Load all the sprites (images) for your game and store them into memory
+Create the different hooks
+key_handler
+mouse_handler (if necessary)
+close_handler, this is a hook on the red cross that closes the program correctly
+loop_hook (=> you game loop)
+
+Render checklist
+================
+Draw the background
+Draw the not movable parts of the map
+Draw the player
+
+

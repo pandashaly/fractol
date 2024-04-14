@@ -6,7 +6,7 @@
 /*   By: ssottori <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 09:35:54 by ssottori          #+#    #+#             */
-/*   Updated: 2024/04/14 14:29:50 by ssottori         ###   ########.fr       */
+/*   Updated: 2024/04/14 20:12:01 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <math.h>
+# include <X11/X.h> //X11 functions & data types for graphics and window management
+# include <X11/keysym.h> //to identify keyboard events. allows you to map keycodes to more human-readable key symbols
 
 // ========WINDOW SIZE
 # define WIDTH 1000
@@ -47,15 +49,24 @@
 # define	PASTELPINK		0xFFB6C1
 # define LILAC      0xEFB1FF
 
+// =========KEYS
+# define KEY_ESC 53
+
 typedef struct s_fractol
 {
 
   void  *mlx_init_bruv;
   void  *mlx_window;
-  t_image img;
+  void  *img;
 
 } t_fractol;
 
 void  ft_pixel_put(t_fractol *fractol, int x, int y, int rgb);
+void  ft_init_window(t_fractol *fractol);
+void  ft_arg_err(void);
+void  ft_args_checks(t_fractol *fractol, int ac, char **av);
+void  ft_keyhooks(t_fractol *fractol);
+int   ft_esc_key(int key, t_fractol *fractol);
+int   ft_close_window(t_fractol *fractol);
 
 #endif

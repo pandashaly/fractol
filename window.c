@@ -6,7 +6,7 @@
 /*   By: ssottori <ssottori@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 23:59:00 by ssottori          #+#    #+#             */
-/*   Updated: 2024/04/14 14:37:31 by ssottori         ###   ########.fr       */
+/*   Updated: 2024/04/14 20:11:35 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,44 +14,61 @@
 #include <mlx.h>
 #include <stdio.h>
 
-/*void  *ft_pixel_put(t_fractol *fractol, int x, int y, int rgb)
+void  ft_keyhooks(t_fractol *fractol)
 {
-  char *dst;
+  mlx_key_hook(fractol->mlx_window, ft_esc_key, fractol);
+}
 
-  if (x >= 0 && < WIDTH && y >= 0 && < HEIGHT)
-  {
-    dst = fractol->img_line + 
-      (y * fractol->image.line_length + x * (fractol->img.bits_per_pixel / 8));
-    *(unsigned int *)dst = rgb;
-  }
-}*/
+int   ft_esc_key(int key, t_fractol *fractol)
+{
+  if (key == KEY_ESC)
+    ft_close_window(fractol);
+  return (0);
+}
 
-void  ft_init_fractol(t_fractol *ractol, int ac, char **av)
+int   ft_close_window(t_fractol *fractol)
 {
-  ft_args_check(fractol, ac, av);
+  mlx_destroy_image(fractol->mlx_init_bruv, fractol->img);
+  mlx_destroy_window(fractol->mlx_init_bruv, fractol->mlx_window);
+  free(fractol->mlx_init_bruv);
+  exit(EXIT_SUCCESS);
+}
+
+void  ft_arg_err(void)
 {
+  ft_putstr_fd("Invalid arguments.\nPlease enter:\n\t", 1);
+  ft_putstr_fd("./fractol mandelbrot\nOR \n\t./fractol julia <value_1> <value_2>", 1); 
+  exit(0);
+}
 
 void  ft_args_checks(t_fractol *fractol, int ac, char **av)
 {
-  if (ac < 2 || ac > 4)
-    ft_err_msg();
+  if (ac == 2 && (!ft_strncmp(av[1], "mandelbrot", 10)
+      || (ac == 4 && !ft_strncmp(av[1], "julia", 5))))
+    ft_init_window(fractol);
+  else
+    ft_arg_err();
+}
 
 void  ft_init_window(t_fractol *fractol)
 {
   fractol->mlx_init_bruv = mlx_init();
-  if (!fractol)
-    exit(1);
-  fractol->mlx_window = mlx_new window(fractol->mlx_init_bruv, 
+  fractol->mlx_window = mlx_new_window(fractol->mlx_init_bruv, 
       WIDTH, HEIGHT, "Fract-ol <3");
-  if (!fractol->mlx_window)
-    exit(1);
+  ft_keyhooks(fractol);
 }
 
-int	main(void)
+int	main(int ac, char **av)
 {
   t_fractol fractol;
-  ft_init_window(fractol);
+  ft_args_checks(&fractol, ac, av);
+  ft_keyhooks(&fractol);
 
-	mlx_string_put(mlx_init_bruv, mlx_win, WIDTH * 0.5, HEIGHT * 0.5, 0xeda7ff, "Hello Donut! <3");
-	mlx_loop(mlx_init_bruv);
+
+  void *img;
+
+  img = mlx_new_image(fractol.mlx_init_bruv, WIDTH, HEIGHT);
+	mlx_string_put(fractol.mlx_init_bruv, fractol.mlx_window, WIDTH * 0.5,
+      HEIGHT * 0.5, 0xeda7ff, "Hello Donut! <3");
+	mlx_loop(fractol.mlx_init_bruv);
 }

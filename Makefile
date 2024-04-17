@@ -32,7 +32,7 @@ IFLAGS = -I$(INC) -I$(LIBFT_PATH)/inc
 LIBFT = $(LIBFT_PATH)/libft.a
 
 # ================SRCS=================
-SRCS = test.c \
+SRCS = window.c \
 
 OBJS = $(SRCS:.c=.o)
 

@@ -6,7 +6,7 @@
 #    By: ssottori <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/05 19:29:37 by ssottori          #+#    #+#              #
-#    Updated: 2024/04/13 02:11:32 by ssottori         ###   ########.fr        #
+#    Updated: 2024/04/17 14:42:32 by ssottori         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ IFLAGS = -I$(INC) -I$(LIBFT_PATH)/inc
 LIBFT = $(LIBFT_PATH)/libft.a
 
 # ================SRCS=================
-SRCS = window.c \
+SRCS = test.c \
 
 OBJS = $(SRCS:.c=.o)
 

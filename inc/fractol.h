@@ -34,8 +34,8 @@
 # define WHITE			0xFFFFFF
 # define GREEN			0x00FF00
 # define BLUE			0x0000FF
-# define RED      0xFF0000
-# define MAGENTA			0xFF00FF
+# define RED            0xFF0000
+# define MAGENTA		0xFF00FF
 # define LIME			0xCCFF00
 # define ORANGE			0xFF6600
 # define PURPLE			0x9932CC
@@ -46,27 +46,27 @@
 # define LAVA			0xFF3300
 # define YELLOW			0xFFFF00
 # define PASTELYELLOW	0xFFFF99
-# define	PASTELPINK		0xFFB6C1
-# define LILAC      0xEFB1FF
+# define PASTELPINK		0xFFB6C1
+# define LILAC          0xEFB1FF
 
 // =========KEYS
 # define KEY_ESC 53
 
-typedef struct s_fractol
+typedef struct s_fract
 {
 
-  void  *mlx_init_bruv;
-  void  *mlx_window;
+  void  *mlx;
+  void  *window;
   void  *img;
 
-} t_fractol;
+} t_fract;
 
-void  ft_pixel_put(t_fractol *fractol, int x, int y, int rgb);
-void  ft_init_window(t_fractol *fractol);
+void  ft_pixel_put(t_fract *fractol, int x, int y, int rgb);
+void  ft_init_window(t_fract *fractol);
 void  ft_arg_err(void);
-void  ft_args_checks(t_fractol *fractol, int ac, char **av);
-void  ft_keyhooks(t_fractol *fractol);
-int   ft_esc_key(int key, t_fractol *fractol);
-int   ft_close_window(t_fractol *fractol);
+void  ft_args_checks(t_fract *fractol, int ac, char **av);
+void  ft_keyhooks(t_fract *fractol);
+int   ft_esc_key(int key, t_fract *fractol);
+int   ft_close_window(t_fract *fractol);
 
 #endif

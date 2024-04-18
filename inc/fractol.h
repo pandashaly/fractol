@@ -60,6 +60,8 @@
 # define M_ZOOM_IN 4
 # define M_ZOOM_OUT 5
 
+# define PI 3.141592653
+
 // ==========STRUCTS
 typedef struct s_img
 {

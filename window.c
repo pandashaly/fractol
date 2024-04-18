@@ -30,15 +30,27 @@ void	ft_put_pixel(t_fract *fract, int x, int y, int rbg)
 void    draw_circle(t_fract *fract, int centre_x, int centre_y, int radius)
 {
     double angle = 0;
-    double angle_step =  3.141592653 / 720;
+    double angle_step =  PI / (2 * radius);
     int x;
     int y;
 
-    while (angle <= 2 * 3.141592653)
+    while (angle <= 2 * PI)
     {
-        x = centre_x + radius * cos(angle);
-        y = centre_y + radius * sin(angle);
-        ft_put_pixel(fract, x, y, 0x000000);
+        x = centre_x + (int)(radius * cos(angle) + 0.5);
+        y = centre_y + (int)(radius * sin(angle) + 0.5);
+        int i = -1;
+        while(i <= 1)
+        {
+            int j = -1;
+            while (j <= 1)
+            {
+                int pixel_x = (int)(x + i + 0.5);
+                int pixel_y = (int)(y + j + 0.5);
+                ft_put_pixel(fract, pixel_x, pixel_y, 0x000000);
+                j++;
+            }
+            i++;
+        }
         angle += angle_step;
     }
 }
@@ -48,7 +60,7 @@ void    ft_init_image(t_fract *fract)
     fract->img.img = mlx_new_image(fract->mlx, WIDTH, HEIGHT);
     fract->img.addy = mlx_get_data_addr(fract->img.img, &fract->img.bpp, &fract->img.line_length, &fract->img.endian);
     color_map(fract, WIDTH, HEIGHT);
-    ft_put_pixel(fract, 960, 540, 0xFF0000);
+    //ft_put_pixel(fract, 960, 540, 0xFF0000);
     draw_circle(fract, 960, 540, 300);
     draw_circle(fract, 960, 540, 302);
     draw_circle(fract, 960, 540, 301);
@@ -127,7 +139,7 @@ int	main(int ac, char **av)
   ft_args_checks(&fract, ac, av);
   ft_keyhooks(&fract);
   ft_init_image(&fract); 
-    //mlx_string_put(fract.mlx, fract.window, WIDTH * 0.5,
-      //HEIGHT * 0.5, LILAC, "Hello Donut! <3");
+    mlx_string_put(fract.mlx, fract.window, WIDTH * 0.48,
+      HEIGHT * 0.5, LILAC, "Hello Donut! <3");
 	mlx_loop(fract.mlx);
 }

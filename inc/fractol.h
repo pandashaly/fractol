@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol.h                                          :+:      :+:    :+:   */
+/*   fract.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ssottori <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,11 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRACTOL_H
-# define FRACTOL_H
+#ifndef fract_H
+# define fract_H
 
 // =======LIBRARIES
 # include "mlx.h"
+# include <math.h>
 # include "libft.h"
 # include <fcntl.h>
 # include <unistd.h>
@@ -26,8 +27,8 @@
 # include <X11/keysym.h> //to identify keyboard events. allows you to map keycodes to more human-readable key symbols
 
 // ========WINDOW SIZE
-# define WIDTH 1000
-# define HEIGHT 1000
+# define WIDTH 1920
+# define HEIGHT 1080
 
 // ========COLORS
 # define BLACK			0x000000
@@ -52,21 +53,41 @@
 // =========KEYS
 # define KEY_ESC 53
 
+// =========MOUSE
+# define M_LEFT_CLICK 1
+# define M_RIGHT_CLICK 2
+# define M_MID_CLICK 3
+# define M_ZOOM_IN 4
+# define M_ZOOM_OUT 5
+
+// ==========STRUCTS
+typedef struct s_img
+{
+	void	*img;
+	char	*addy;
+	int		bpp;
+	int		line_length;
+	int		endian;
+}	t_img;
+
 typedef struct s_fract
 {
 
   void  *mlx;
   void  *window;
-  void  *img;
+  t_img   img;
 
 } t_fract;
 
-void  ft_pixel_put(t_fract *fractol, int x, int y, int rgb);
-void  ft_init_window(t_fract *fractol);
+void  ft_pixel_put(t_fract *fract, int x, int y, int rgb);
+void    draw_circle(t_fract *fract, int centre_x, int centre_y, int radius);
+void  ft_init_window(t_fract *fract);
 void  ft_arg_err(void);
-void  ft_args_checks(t_fract *fractol, int ac, char **av);
-void  ft_keyhooks(t_fract *fractol);
-int   ft_esc_key(int key, t_fract *fractol);
-int   ft_close_window(t_fract *fractol);
+void  ft_args_checks(t_fract *fract, int ac, char **av);
+void  ft_keyhooks(t_fract *fract);
+void    ft_init_image(t_fract *fract);
+int   ft_esc_key(int key, t_fract *fract);
+int   ft_close_window(t_fract *fract);
+int   color_map(t_fract *fract, int w, int h);
 
 #endif

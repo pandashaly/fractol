@@ -61,7 +61,7 @@ $(LIBFT):
 	$(MAKE) -C $(LIBFT_PATH)
 
 $(NAME): $(OBJS)
-			$(CCFLAGS) $(OBJS) $(MLX) $(IFLAGS) $(LFLAGS) -o $(NAME) -lX11 -lXext
+			$(CCFLAGS) $(OBJS) $(MLX) $(IFLAGS) $(LFLAGS) -o $(NAME) -lX11 -lXext -lm
 	@echo "[$(GREEN)FRACTOL$(NC)] - $<"
 
 %.o: %.c

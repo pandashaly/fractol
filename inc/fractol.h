@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fract.h                                          :+:      :+:    :+:   */
+/*   fractol.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ssottori <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 09:35:54 by ssottori          #+#    #+#             */
-/*   Updated: 2024/04/14 20:12:01 by ssottori         ###   ########.fr       */
+/*   Updated: 2024/04/19 13:59:28 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,9 @@ typedef struct s_fract
 
 } t_fract;
 
-void  ft_pixel_put(t_fract *fract, int x, int y, int rgb);
+void  ft_run_test1(t_fract *fract);
+void    ft_init_test(t_fract *fract);
+void  ft_put_pixel(t_fract *fract, int x, int y, int rgb);
 void    draw_circle(t_fract *fract, int centre_x, int centre_y, int radius);
 void  ft_init_window(t_fract *fract);
 void  ft_arg_err(void);

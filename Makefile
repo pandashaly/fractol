@@ -6,7 +6,7 @@
 #    By: ssottori <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/05 19:29:37 by ssottori          #+#    #+#              #
-#    Updated: 2024/04/17 14:42:32 by ssottori         ###   ########.fr        #
+#    Updated: 2024/04/19 14:00:39 by ssottori         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,12 @@ IFLAGS = -I$(INC) -I$(LIBFT_PATH)/inc
 LIBFT = $(LIBFT_PATH)/libft.a
 
 # ================SRCS=================
-SRCS = window.c \
+SRCS = fractol.c \
+	   parser.c \
+	   test.c \
+	   utils.c \
+	   window.c \
+	   events.c \
 
 OBJS = $(SRCS:.c=.o)
 

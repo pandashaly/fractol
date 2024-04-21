@@ -13,7 +13,7 @@
 #include <mlx.h>
 #include "fractol.h"
 
-void  ft_init_test(t_fract *fract)
+void  ft_init_test(t_fractol *fract)
 {
   ft_init_window(fract);
   fract->img.img = mlx_new_image(fract->mlx, WIDTH, HEIGHT);
@@ -24,7 +24,7 @@ void  ft_init_test(t_fract *fract)
   ft_keyhooks(fract);
 }
 
-void  ft_run_test1(t_fract *fract)
+void  ft_run_test1(t_fractol *fract)
 {
   int n = 300;
   color_map(fract, WIDTH, HEIGHT);
@@ -36,7 +36,7 @@ void  ft_run_test1(t_fract *fract)
   }
 }
 
-void    draw_circle(t_fract *fract, int centre_x, int centre_y, int radius)
+void    draw_circle(t_fractol *fract, int centre_x, int centre_y, int radius)
 {
     double angle = 0;
     double angle_step =  PI / (360);
@@ -64,7 +64,7 @@ void    draw_circle(t_fract *fract, int centre_x, int centre_y, int radius)
     }
 }
 
-int	color_map(t_fract *fract, int w, int h)
+int	color_map(t_fractol *fract, int w, int h)
 {
     int	x;
     int	y;

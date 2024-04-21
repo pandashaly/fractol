@@ -32,12 +32,14 @@ IFLAGS = -I$(INC) -I$(LIBFT_PATH)/inc
 LIBFT = $(LIBFT_PATH)/libft.a
 
 # ================SRCS=================
-SRCS = fractol.c \
+SRCS = errors.c \
+	   events.c \
+	   fractol.c \
 	   parser.c \
+	   render.c \
 	   test.c \
 	   utils.c \
 	   window.c \
-	   events.c \
 
 OBJS = $(SRCS:.c=.o)
 

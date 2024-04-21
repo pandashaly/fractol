@@ -6,7 +6,7 @@
 /*   By: ssottori <ssottori@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 12:40:24 by ssottori          #+#    #+#             */
-/*   Updated: 2024/04/19 13:50:18 by ssottori         ###   ########.fr       */
+/*   Updated: 2024/04/21 16:02:33 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@
 
   ft_args_check(&fract, ac, av);
   ft_init_fractol(&fract);
-    create_window;
-    create_image;
-    events_init;
+    create_window; [x]
+    create_image; [x]
+    events_init; [x] make mouse hooks
     data_init;
   ft_set_hooks(&fractol);
   ft_init_image();
@@ -31,9 +31,18 @@
 
 int	main(int ac, char **av)
 {
-  t_fract fract;
-  ft_args_checks(&fract, ac, av);
-  ft_keyhooks(&fract);
-  ft_init_image(&fract);
+  t_fractol fract;
+
+    ft_args_checks(&fract, ac, av);
+    if (!ft_strncmp(fract.name, "Mandelbrot", 5))
+          ft_init_fractol(&fract);
+    else if (!ft_strncmp(fract.name, "Julia", 5))
+    {
+        fract.julia_r = ft_atof(av[2]);
+        fract.julia_i = ft_atof(av[3]);
+        ft_init_fractol(&fract);
+    }
+    ft_render(&fract);
 	mlx_loop(fract.mlx);
+    return (0);
 }

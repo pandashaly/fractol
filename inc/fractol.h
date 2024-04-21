@@ -6,12 +6,12 @@
 /*   By: ssottori <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 09:35:54 by ssottori          #+#    #+#             */
-/*   Updated: 2024/04/19 13:59:28 by ssottori         ###   ########.fr       */
+/*   Updated: 2024/04/21 15:45:40 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef fract_H
-# define fract_H
+#ifndef FRACTOL_H
+# define FRACTOL_H
 
 // =======LIBRARIES
 # include "mlx.h"
@@ -72,26 +72,32 @@ typedef struct s_img
 	int		endian;
 }	t_img;
 
-typedef struct s_fract
+typedef struct s_fractol
 {
 
   void  *mlx;
   void  *window;
+  char  *name;
   t_img   img;
+  double    julia_i;
+  double    julia_r;
+} t_fractol;
 
-} t_fract;
-
-void  ft_run_test1(t_fract *fract);
-void    ft_init_test(t_fract *fract);
-void  ft_put_pixel(t_fract *fract, int x, int y, int rgb);
-void    draw_circle(t_fract *fract, int centre_x, int centre_y, int radius);
-void  ft_init_window(t_fract *fract);
+double  ft_atof(char *str);
+void  ft_run_test1(t_fractol *fract);
+void  ft_init_fractol(t_fractol *fract);
+void    ft_init_test(t_fractol *fract);
+void  ft_put_pixel(t_fractol *fract, int x, int y, int rgb);
+void    draw_circle(t_fractol *fract, int centre_x, int centre_y, int radius);
+void  ft_init_window(t_fractol *fract);
 void  ft_arg_err(void);
-void  ft_args_checks(t_fract *fract, int ac, char **av);
-void  ft_keyhooks(t_fract *fract);
-void    ft_init_image(t_fract *fract);
-int   ft_esc_key(int key, t_fract *fract);
-int   ft_close_window(t_fract *fract);
-int   color_map(t_fract *fract, int w, int h);
+void  ft_args_checks(t_fractol *fract, int ac, char **av);
+void  ft_keyhooks(t_fractol *fract);
+void    ft_init_image(t_fractol *fract);
+void  ft_readme(void);
+void    ft_render(t_fractol *fract);
+int   ft_esc_key(int key, t_fractol *fract);
+int   ft_close_window(t_fractol *fract);
+int   color_map(t_fractol *fract, int w, int h);
 
 #endif

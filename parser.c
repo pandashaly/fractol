@@ -20,7 +20,7 @@ void  ft_arg_err(void)
   exit(EXIT_FAILURE);  
 }
 
-void  ft_args_checks(char *name, int ac, char **av)
+/*void  ft_args_checks(char *name, int ac, char **av)
 {
   if (ac == 2 && (!ft_strncmp(av[1], "m", 1)
       || (ac == 4 && !ft_strncmp(av[1], "j", 1))))
@@ -33,4 +33,4 @@ void  ft_args_checks(char *name, int ac, char **av)
   }
   else
     ft_arg_err();
-}
+}*/

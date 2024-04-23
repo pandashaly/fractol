@@ -34,16 +34,23 @@ int	main(int ac, char **av)
 {
   t_fractol fract;
 
-    ft_args_checks(&(fract.name), ac, av);
-    if (!ft_strncmp(fract.name, "Mandelbrot", 5))
-          ft_init_fractol(&fract);
-    else if (!ft_strncmp(fract.name, "Julia", 5))
+    if (ac == 2 && (!ft_strncmp(av[1], "m", 1)
+      || (ac == 4 && !ft_strncmp(av[1], "j", 1))))
     {
-        fract->julia_r = ft_atof(av[2]);
-        fract->julia_i = ft_atof(av[3]);
+        ft_readme();
+        if (!ft_strncmp(av[1], "m", 1))
+            ft_strcpy(fract.name, "Mandelbrot");
+        else if (!ft_strncmp(av[1], "j", 1))
+        {
+            ft_strcpy(fract.name, "Julia");
+            //fract->julia_r = ft_atof(av[2]);
+            //fract->julia_i = ft_atof(av[3]);
+        }
         ft_init_fractol(&fract);
+        ft_mandelbrot(&fract);
+        mlx_loop(fract.mlx);
     }
-    //ft_render(&fract);
-	mlx_loop(fract.mlx);
+    else
+        ft_arg_err();
     return (0);
 }

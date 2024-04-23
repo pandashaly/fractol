@@ -16,7 +16,7 @@
 // =======LIBRARIES
 # include "mlx.h"
 # include <math.h>
-# include "libft.h"
+# include "../libs/libft/inc/libft.h"
 # include <fcntl.h>
 # include <unistd.h>
 # include <stdarg.h>
@@ -95,7 +95,7 @@ typedef struct s_fractol
 
 double  ft_atof(char *str);
 void  ft_run_test(t_fractol *fract);
-void  ft_mandelbrot(t_complex *z, t_complex c);
+void  ft_mandelbrot(t_fractol *fract, t_complex *z, t_complex *c);
 void  ft_init_fractol(t_fractol *fract);
 void    ft_init_test(t_fractol *fract);
 void  ft_put_pixel(t_fractol *fract, int x, int y, int rgb);

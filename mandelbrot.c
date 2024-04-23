@@ -12,7 +12,7 @@
 
 #include "fractol.h"
 
-void    ft_formula(t_complex *z, t_complex *c)
+void    ft_mandelbrot(t_fractol *fract, t_complex *z, t_complex *c)
 {
     int color = 0;
    
@@ -28,7 +28,7 @@ void    ft_formula(t_complex *z, t_complex *c)
             z->delulu = 0;
 
             int i = 0;
-            while (z.real * z.real + z.delulu * z.delulu <= 3) && i < M_ITER)
+            while ((z->real * z->real + z->delulu * z->delulu <= 3) && i < M_ITER)
             {
                 tmp = (z->real * z->real) - (z->delulu * z->delulu) + c->real;
                 z->delulu = ((double)2 * z->real * z->delulu) + c->delulu;

@@ -29,6 +29,7 @@
 // ========WINDOW SIZE
 # define WIDTH 1920
 # define HEIGHT 1080
+# define M_ITER 200
 
 // ========COLORS
 # define BLACK			0x000000
@@ -72,26 +73,36 @@ typedef struct s_img
 	int		endian;
 }	t_img;
 
+
+typedef struct t_complex
+{
+    double  real;
+    double  delulu;
+}   t_complex;
+
 typedef struct s_fractol
 {
 
   void  *mlx;
   void  *window;
-  char  *name;
+  char  name[10];
   t_img   img;
   double    julia_i;
   double    julia_r;
+  t_complex z;
+  t_complex c;
 } t_fractol;
 
 double  ft_atof(char *str);
-void  ft_run_test1(t_fractol *fract);
+void  ft_run_test(t_fractol *fract);
+void  ft_mandelbrot(t_complex *z, t_complex c);
 void  ft_init_fractol(t_fractol *fract);
 void    ft_init_test(t_fractol *fract);
 void  ft_put_pixel(t_fractol *fract, int x, int y, int rgb);
 void    draw_circle(t_fractol *fract, int centre_x, int centre_y, int radius);
 void  ft_init_window(t_fractol *fract);
 void  ft_arg_err(void);
-void  ft_args_checks(t_fractol *fract, int ac, char **av);
+void  ft_args_checks(char *name, int ac, char **av);
 void  ft_keyhooks(t_fractol *fract);
 void    ft_init_image(t_fractol *fract);
 void  ft_readme(void);

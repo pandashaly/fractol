@@ -22,7 +22,7 @@ void	ft_render(t_fractol *fract)
 	{
 		x = -1;
 		while (++x < WIDTH)
-			complex_map(x, y, fract);
+			ft_draw_fract(x, y, fract);
 	}
 	mlx_put_image_to_window(fract->mlx, fract->window, fract->img.img, 0, 0);
 }

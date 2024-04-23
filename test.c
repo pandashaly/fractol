@@ -19,12 +19,12 @@ void  ft_init_test(t_fractol *fract)
   fract->img.img = mlx_new_image(fract->mlx, WIDTH, HEIGHT);
   fract->img.addy = mlx_get_data_addr(fract->img.img,
       &fract->img.bpp, &fract->img.line_length, &fract->img.endian);
-  ft_run_test1(fract);
+  ft_run_test(fract);
   mlx_put_image_to_window(fract->mlx, fract->window, fract->img.img, 0, 0);
   ft_keyhooks(fract);
 }
 
-void  ft_run_test1(t_fractol *fract)
+void  ft_run_test(t_fractol *fract)
 {
   int n = 300;
   color_map(fract, WIDTH, HEIGHT);

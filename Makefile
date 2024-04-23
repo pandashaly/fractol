@@ -6,7 +6,7 @@
 #    By: ssottori <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/05 19:29:37 by ssottori          #+#    #+#              #
-#    Updated: 2024/04/19 14:00:39 by ssottori         ###   ########.fr        #
+#    Updated: 2024/04/22 16:40:06 by ssottori         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ GREEN=\033[1;32m
 NC=\033[0m
 
 # ===============FLAGS=================
-CCFLAGS = cc -Wall -Wextra -Werror -ggdb3
+CCFLAGS = cc -Wall -Wextra -Werror -g
 RM = rm -rf
 NAME = fractol
 
@@ -34,10 +34,10 @@ LIBFT = $(LIBFT_PATH)/libft.a
 # ================SRCS=================
 SRCS = errors.c \
 	   events.c \
-	   fractol.c \
 	   parser.c \
-	   render.c \
 	   test.c \
+	   mandelbrot.c \
+	   fractol.c \
 	   utils.c \
 	   window.c \
 

@@ -20,22 +20,17 @@ void  ft_arg_err(void)
   exit(EXIT_FAILURE);  
 }
 
-void  ft_args_checks(t_fractol *fract, int ac, char **av)
+void  ft_args_checks(char *name, int ac, char **av)
 {
   if (ac == 2 && (!ft_strncmp(av[1], "m", 1)
       || (ac == 4 && !ft_strncmp(av[1], "j", 1))))
   {
     ft_readme();
     if (!ft_strncmp(av[1], "m", 1))
-        fract->name = "Mandelbrot";
+        ft_strcpy(fract->name, "Mandelbrot");
     else if (!ft_strncmp(av[1], "j", 1))
-      fract->name = "Julia";
-    // init fractol
-    //start renderring
-    //mlx_loop
+      ft_strcpy(fract->name, "Julia");
   }
-  else if (ac == 2 && (!ft_strncmp(av[1], "test", 4)))
-      ft_init_test(fract);
   else
     ft_arg_err();
 }

@@ -26,7 +26,8 @@ void    ft_init_image(t_fractol *fract)
         &fract->img.bpp,
         &fract->img.line_length,
         &fract->img.endian);
-    //mlx_put_image_to_window(fract->mlx, fract->window, fract->img.img, 0, 0);
+    mlx_put_image_to_window(fract->mlx,
+            fract->window, fract->img.img, 0, 0);
 }
 
 void  ft_init_window(t_fractol *fract)

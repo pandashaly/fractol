@@ -21,6 +21,7 @@ void	ft_put_pixel(t_fractol *fract, int x, int y, int rbg)
 		dst = fract->img.addy + (y * fract->img.line_length
 				+ x * (fract->img.bpp / 8));
 		*(unsigned int *)dst = rbg;
+    //printf("Setting pixel at (x, y) = (%d, %d) with color %#x\n", x, y, rbg);
 	}
 }
 

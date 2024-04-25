@@ -46,7 +46,7 @@ OBJS = $(SRCS:.c=.o)
 # ================MLX===================
 
 MLX_PATH = libs/mlx
-MLX = $(MLX_PATH)/libmlx_Linux.a
+MLX = $(MLX_PATH)/libmlx.a
 IFLAGS += -I$(MLX_PATH)
 
 UNAME_S := $(uname -s)

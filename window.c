@@ -20,12 +20,13 @@ void    ft_init_image(t_fractol *fract)
       mlx_destroy_window(fract->mlx, fract->window);
       mlx_destroy_display(fract->mlx);
       free(fract->mlx);
-      //check malloc
+      ft_malloc_err();
     }
     fract->img.addy = mlx_get_data_addr(fract->img.img,
         &fract->img.bpp,
         &fract->img.line_length,
         &fract->img.endian);
+    printf("Image buffer address: %p\n", fract->img.addy);
     mlx_put_image_to_window(fract->mlx,
             fract->window, fract->img.img, 0, 0);
 }
@@ -39,7 +40,7 @@ void  ft_init_window(t_fractol *fract)
   {
     mlx_destroy_display(fract->mlx);
     free(fract->mlx);
-    //exit saftely;
+    ft_malloc_err();
   }
 }
 
@@ -47,8 +48,9 @@ void  ft_init_fractol(t_fractol *fract)
 {
   fract->mlx =  mlx_init();
   if (!fract->mlx)
-    //exit saftely;
+    ft_malloc_err();
   ft_init_window(fract);
   ft_init_image(fract);
   ft_keyhooks(fract);
+  printf("yay done");
 }

@@ -63,10 +63,10 @@
 
 # define PI 3.141592653
 
-# define MAX_REAL       1.5
-# define MIN_REAL      -1.5
-# define MAX_IMAGINARY  1.5
-# define MIN_IMAGINARY -1.5
+# define MAX_REAL       2.0
+# define MIN_REAL      -2.0
+# define MAX_IMAGINARY  2.0
+# define MIN_IMAGINARY -2.0
 
 // ==========STRUCTS
 typedef struct s_img
@@ -99,6 +99,7 @@ typedef struct s_fractol
 } t_fractol;
 
 double  ft_atof(char *str);
+int color_map(int i);
 void  ft_run_test(t_fractol *fract);
 void  ft_malloc_err(void);
 void  ft_mandelbrot(t_fractol *fract);
@@ -115,6 +116,6 @@ void  ft_readme(void);
 void    ft_render(t_fractol *fract);
 int   ft_esc_key(int key, t_fractol *fract);
 int   ft_close_window(t_fractol *fract);
-int   color_map(t_fractol *fract, int w, int h);
+//int   color_map(t_fractol *fract, int w, int h);
 
 #endif

@@ -79,9 +79,9 @@ void ft_mandelbrot(t_fractol *fract)
             //printf("z: real = %f, imaginary = %f\n", z.real, z.delulu);
 
             if (i == M_ITER)
-                color = WHITE;
+                color = BLACK;
             else
-                color = i;
+                color = color_map(i);
             //printf("Color assigned to pixel (%d, %d): %#x\n", x, y, color);
             ft_put_pixel(fract, x, y, color);
             y++;
@@ -91,3 +91,14 @@ void ft_mandelbrot(t_fractol *fract)
     mlx_put_image_to_window(fract->mlx, fract->window, fract->img.img, 0, 0);
 }
 
+int color_map(int i) {
+    double t = (double)i / M_ITER;
+
+    // Linear interpolation between black (0) and white (1)
+    int red = (int)(255 * t);
+    int green = (int)(255 * t);
+    int blue = (int)(255 * t);
+
+    // Combine RGB components into a single color value
+    return (red << 16) | (green << 8) | blue;
+}

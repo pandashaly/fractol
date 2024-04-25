@@ -64,7 +64,7 @@ void    draw_circle(t_fractol *fract, int centre_x, int centre_y, int radius)
     }
 }
 
-int	color_map(t_fractol *fract, int w, int h)
+/*int	color_map(t_fractol *fract, int w, int h)
 {
     int	x;
     int	y;
@@ -81,5 +81,5 @@ int	color_map(t_fractol *fract, int w, int h)
         }
     }
     return (0);
-}
+}*/
 

@@ -35,7 +35,6 @@ LIBFT = $(LIBFT_PATH)/libft.a
 SRCS = errors.c \
 	   events.c \
 	   parser.c \
-	   test.c \
 	   mandelbrot.c \
 	   fractol.c \
 	   utils.c \

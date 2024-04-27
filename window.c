@@ -43,6 +43,12 @@ void  ft_init_window(t_fractol *fract)
   }
 }
 
+void  ft_init_data(t_fractol *fract)
+{
+  fract->zoom = 1;
+  //fract->m_iter = 200;
+}
+
 void  ft_init_canvas(t_fractol *fract)
 {
   fract->mlx =  mlx_init();
@@ -50,6 +56,7 @@ void  ft_init_canvas(t_fractol *fract)
     ft_malloc_err();
   ft_init_window(fract);
   ft_init_image(fract);
+  ft_init_data(fract);
   ft_keyhooks(fract);
   printf("yay done");
 }

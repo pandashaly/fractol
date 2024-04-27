@@ -69,6 +69,13 @@
 # define MIN_IMAGINARY -1.5
 
 // ==========STRUCTS
+
+typedef struct s_data
+{
+  double  zoom;
+  double  m_iter;
+} t_data;
+
 typedef struct s_img
 {
 	void	*img;
@@ -77,7 +84,6 @@ typedef struct s_img
 	int		line_length;
 	int		endian;
 }	t_img;
-
 
 typedef struct t_complex
 {
@@ -96,10 +102,12 @@ typedef struct s_fractol
   double    julia_r;
   t_complex z;
   t_complex c;
+  double zoom;
 } t_fractol;
 
 double  ft_atof(char *str);
 int color_map(int i);
+void  ft_init_data(t_fractol *fract);
 void  ft_run_test(t_fractol *fract);
 void  ft_malloc_err(void);
 void  ft_mandelbrot(t_fractol *fract);
@@ -120,6 +128,7 @@ void  ft_readme(void);
 void    ft_render(t_fractol *fract);
 int   ft_esc_key(int key, t_fractol *fract);
 int   ft_close_window(t_fractol *fract);
+int  ft_mouse_hook(int button, int x, int y, t_fractol *fract);
 //int   color_map(t_fractol *fract, int w, int h);
 
 #endif

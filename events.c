@@ -12,7 +12,7 @@
 
 #include "fractol.h"
 
-/*int ft_mouse_hook(int button, intx, int y, t_fract *fract)
+int ft_mouse_hook(int button, int x, int y, t_fractol *fract)
 {
     (void)x;
     (void)y;
@@ -21,9 +21,11 @@
     else if (button == M_ZOOM_OUT)
         fract->zoom /= 1.1;
     return (0);
-}*/
+}
 
 //int ft_keyhooks(int key, t_fractol, *fract)
+
+
 
 int ft_esc_key(int key, t_fractol *fract)
 {
@@ -35,5 +37,8 @@ int ft_esc_key(int key, t_fractol *fract)
 void    ft_keyhooks(t_fractol *fract)
 {
     mlx_hook(fract->window, 17, 0, ft_close_window, fract);
+    mlx_mouse_hook(fract->window, ft_mouse_hook, fract);
     mlx_hook(fract->window, 3, 1L << 1, ft_esc_key, fract);
 }
+
+

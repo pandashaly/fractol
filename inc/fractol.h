@@ -27,8 +27,8 @@
 # include <X11/keysym.h> //to identify keyboard events. allows you to map keycodes to more human-readable key symbols
 
 // ========WINDOW SIZE
-# define WIDTH 1920
-# define HEIGHT 1080
+# define WIDTH 1366
+# define HEIGHT 768
 # define M_ITER 500
 
 // ========COLORS
@@ -63,10 +63,10 @@
 
 # define PI 3.141592653
 
-# define MAX_REAL       2.0
-# define MIN_REAL      -2.0
-# define MAX_IMAGINARY  2.0
-# define MIN_IMAGINARY -2.0
+# define MAX_REAL       1.5
+# define MIN_REAL      -2.5
+# define MAX_IMAGINARY  1.5
+# define MIN_IMAGINARY -1.5
 
 // ==========STRUCTS
 typedef struct s_img

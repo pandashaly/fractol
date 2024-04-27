@@ -45,7 +45,7 @@ void ft_mandelbrot(t_fractol *fract)
             if (i == M_ITER)
                 color = BLACK;
             else
-                color = blend_colours(BLACK, LIME, (double)i / M_ITER);
+                color = blend_colours(BLACK, RED, (double)i / M_ITER);
             //printf("Color assigned to pixel (%d, %d): %#x\n", x, y, color);
             ft_put_pixel(fract, x, y, color);
             y++;

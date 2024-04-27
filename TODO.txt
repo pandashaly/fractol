@@ -1,5 +1,6 @@
 [] make smoot color blending function
-[] offset? fix mandlebrot 
+[x] offset? fix mandlebrot kind of fixed resolution 
+[] make responsive design + scaling element for diff resolutions
 [] add zoom in - zoom out
 [] add color blend function to keyhook
 [] get julia to work

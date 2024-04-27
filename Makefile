@@ -44,17 +44,27 @@ OBJS = $(SRCS:.c=.o)
 
 # ================MLX===================
 
+MLX_URL = git@github.com:42Paris/minilibx-linux.git
+CLONE_DIR_NAME = mlx
+MLX_INSTALL_DIR = /libs
+
 MLX_PATH = libs/mlx
 MLX = $(MLX_PATH)/libmlx.a
-IFLAGS += -I$(MLX_PATH)
+# Check if mlx library is installed
+#$(info MLX path: $(MLX))
 
-UNAME_S := $(uname -s)
-ifeq ($(UNAME_S),Linux)
-	CCFLAGS += -D LINUX
-endif
-ifeq ($(UNAME_S),Darwin)
-	CCFLAGS += -D OSX
-endif
+#ifeq ($(MLX_EXISTS),)
+#mlx:
+#	@echo "MLX is already installed."
+#else
+#mlx:
+#	@echo "Cloning mlx library..."
+#	rm -rf $(CLONE_DIR_NAME)
+#	git clone $(MLX_URL) $(MLX_PATH)
+#endif
+#MLX_PATH = libs/mlx
+#MLX = $(MLX_PATH)/libmlx.a
+IFLAGS += -I$(MLX_PATH)
 
 # ===============BUILD==================
 

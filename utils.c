@@ -52,3 +52,23 @@ double	ft_atof(char *str)
 	}
 	return ((integer + fraction) * sign);
 }
+
+void  ft_init_fractol(t_fractol *fract)
+{
+  if (ft_strcmp(fract->name, "Mandelbrot") == 0)
+    ft_mandelbrot(fract);
+  else if (ft_strcmp(fract->name, "Julia") == 0)
+    ft_init_julia(fract);
+  else 
+    ft_arg_err();
+}
+
+/*void  ft_init_mandelbrot(t_fractol *fract)
+{
+  
+}*/
+
+void  ft_init_julia(t_fractol *fract)
+{
+  ft_mandelbrot(fract);
+}

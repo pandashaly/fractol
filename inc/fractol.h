@@ -29,7 +29,7 @@
 // ========WINDOW SIZE
 # define WIDTH 1920
 # define HEIGHT 1080
-# define M_ITER 200
+# define M_ITER 500
 
 // ========COLORS
 # define BLACK			0x000000
@@ -103,7 +103,11 @@ int color_map(int i);
 void  ft_run_test(t_fractol *fract);
 void  ft_malloc_err(void);
 void  ft_mandelbrot(t_fractol *fract);
+void  ft_init_canvas(t_fractol *fract);
 void  ft_init_fractol(t_fractol *fract);
+//void  ft_init_mandelbrot(t_fractol *fract);
+int	blend_colours(int colour1, int colour2, double t);
+void  ft_init_julia(t_fractol *fract);
 void    ft_init_test(t_fractol *fract);
 void  ft_put_pixel(t_fractol *fract, int x, int y, int rgb);
 void    draw_circle(t_fractol *fract, int centre_x, int centre_y, int radius);

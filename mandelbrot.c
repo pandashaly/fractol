@@ -14,7 +14,6 @@
 
 void ft_mandelbrot(t_fractol *fract)
 {
-    int color = 0;
     t_complex z;
     t_complex c;
 
@@ -26,33 +25,40 @@ void ft_mandelbrot(t_fractol *fract)
         {
             c.real = (double)x / WIDTH * (MAX_REAL - MIN_REAL) + MIN_REAL;
             c.delulu = (double)y / HEIGHT * (MAX_IMAGINARY - MIN_IMAGINARY) + MIN_IMAGINARY;
-            
             z.real = 0;
             z.delulu = 0;
 
-            int i = 0;
-            while ((z.real * z.real + z.delulu * z.delulu <= 4) && i < M_ITER)
-            {
-                double tmp = z.real * z.real - z.delulu * z.delulu + c.real;
-                z.delulu = 2 * z.real * z.delulu + c.delulu;
-                z.real = tmp;
-                i++;
-            }
-            //printf("Current point (x, y): (%d, %d)\n", x, y);
-            //printf("c: real = %f, imaginary = %f\n", c.real, c.delulu);
-            //printf("z: real = %f, imaginary = %f\n", z.real, z.delulu);
-
-            if (i == M_ITER)
-                color = BLACK;
-            else
-                color = blend_colours(BLACK, RED, (double)i / M_ITER);
-            //printf("Color assigned to pixel (%d, %d): %#x\n", x, y, color);
-            ft_put_pixel(fract, x, y, color);
+            int i = ft_mandelbrot_iter(&z, &c);
+            ft_draw(fract, x, y, i);
             y++;
         }
         x++;
     }
     mlx_put_image_to_window(fract->mlx, fract->window, fract->img.img, 0, 0);
+}
+
+int  ft_mandelbrot_iter(t_complex *z, t_complex *c)
+{
+  int i = 0;
+  while ((z->real * z->real + z->delulu * z->delulu <= 4) && i < M_ITER)
+  {
+    double tmp = z->real * z->real - z->delulu * z->delulu + c->real;
+    z->delulu = 2 * z->real * z->delulu + c->delulu;
+    z->real = tmp;
+    i++;
+  }
+  return (i);
+}
+
+void  ft_draw(t_fractol *fract, int x, int y, int i)
+{
+  int color = 0;
+
+  if (i == M_ITER)
+    color = BLACK;
+  else 
+    color = blend_colours(BLACK, RED, (double)i / M_ITER);
+  ft_put_pixel(fract, x, y, color);
 }
 
 int	blend_colours(int colour1, int colour2, double t)

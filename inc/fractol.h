@@ -111,6 +111,8 @@ void  ft_init_data(t_fractol *fract);
 void  ft_run_test(t_fractol *fract);
 void  ft_malloc_err(void);
 void  ft_mandelbrot(t_fractol *fract);
+int   ft_mandelbrot_iter(t_complex *z, t_complex *c);
+void  ft_draw(t_fractol *fract, int x, int y, int i);
 void  ft_init_canvas(t_fractol *fract);
 void  ft_init_fractol(t_fractol *fract);
 //void  ft_init_mandelbrot(t_fractol *fract);

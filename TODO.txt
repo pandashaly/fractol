@@ -6,4 +6,4 @@
 [] get julia to work
 [] more detail
 [] init data??
-[] split up mandelbrot function into 3
+[x] split up mandelbrot function into 3

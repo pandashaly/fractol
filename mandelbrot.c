@@ -12,7 +12,7 @@
 
 #include "fractol.h"
 
-void ft_mandelbrot(t_fractol *fract)
+void ft_init_mandelbrot(t_fractol *fract)
 {
     t_complex z;
     t_complex c;
@@ -28,7 +28,7 @@ void ft_mandelbrot(t_fractol *fract)
             z.real = 0;
             z.delulu = 0;
 
-            int i = ft_mandelbrot_iter(&z, &c);
+            int i = ft_mandelbrot(&z, &c);
             ft_draw(fract, x, y, i);
             y++;
         }
@@ -37,7 +37,7 @@ void ft_mandelbrot(t_fractol *fract)
     mlx_put_image_to_window(fract->mlx, fract->window, fract->img.img, 0, 0);
 }
 
-int  ft_mandelbrot_iter(t_complex *z, t_complex *c)
+int  ft_mandelbrot(t_complex *z, t_complex *c)
 {
   int i = 0;
   while ((z->real * z->real + z->delulu * z->delulu <= 4) && i < M_ITER)

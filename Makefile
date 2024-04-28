@@ -36,6 +36,7 @@ SRCS = errors.c \
 	   events.c \
 	   parser.c \
 	   mandelbrot.c \
+		 julia.c \
 	   fractol.c \
 	   utils.c \
 	   window.c \

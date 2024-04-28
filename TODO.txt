@@ -3,7 +3,7 @@
 [] make responsive design + scaling element for diff resolutions
 [x] add zoom in - zoom out ==== doesn't work
 [] add color blend function to keyhook
-[] get julia to work
+[x] get julia to work
 [] more detail
 [] init data??
 [x] split up mandelbrot function into 3

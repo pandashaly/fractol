@@ -14,7 +14,7 @@
 #include <string.h>
 #include <stdio.h>
 
-static char	*ft_strcpy(char *dst, const char *src)
+/*static char	*ft_strcpy(char *dst, const char *src)
 {
 	size_t	i;
 
@@ -26,7 +26,7 @@ static char	*ft_strcpy(char *dst, const char *src)
 	}
 	dst[i] = '\0';
 	return (dst);
-}
+}*/
 
 char	*ft_strdup(const char *s)
 {

@@ -100,10 +100,19 @@ typedef struct s_fractol
   t_img   img;
   double    julia_i;
   double    julia_r;
+  double    fx;
+  double    fy;
   t_complex z;
   t_complex c;
   double zoom;
 } t_fractol;
+
+void  ft_init_burningship(t_fractol *fract);
+int   ft_burningship(t_complex *z, t_complex *c);
+void  ft_init_feather(t_fractol *fract, double fx, double fy);
+int   ft_feather(t_complex *z, double fx, double fy);
+void  ft_4fract_args(t_fractol *fract, char *av1, char *av2, char *av3);
+void  ft_2fract_args(t_fractol *fract, char *av1);
 
 double  ft_atof(char *str);
 int color_map(int i);

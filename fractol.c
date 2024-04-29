@@ -12,7 +12,7 @@
 
 #include "fractol.h"
 
-int	main(int ac, char **av)
+/*int	main(int ac, char **av)
 {
   t_fractol fract;
 
@@ -34,4 +34,27 @@ int	main(int ac, char **av)
     else
         ft_arg_err();
     return (0);
+}*/
+
+int	main(int ac, char **av)
+{
+  t_fractol fract;
+
+    if (ac >= 2)
+    {
+      //ft_readme();
+      if ((ac == 2 && (!ft_strncmp(av[1], "m", 1))) || (ac == 2 && !ft_strncmp(av[1], "b", 1)))
+        ft_2fract_args(&fract, av[1]);
+      else if ((ac == 4 && (!ft_strncmp(av[1], "j", 1))) || (ac == 4 && !ft_strncmp(av[1], "f", 1)))
+        ft_4fract_args(&fract, av[1], av[2], av[3]);
+    }
+  else 
+    ft_arg_err();
+  if (fract.name[0] != '\0')
+  {
+    ft_init_canvas(&fract);
+    ft_init_fractol(&fract);
+    mlx_loop(fract.mlx);
+  }
+  return (0);
 }

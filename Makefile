@@ -37,6 +37,8 @@ SRCS = errors.c \
 	   parser.c \
 	   mandelbrot.c \
 		 julia.c \
+		 feather.c \
+		 burning_ship.c \
 	   fractol.c \
 	   utils.c \
 	   window.c \

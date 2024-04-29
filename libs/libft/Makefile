@@ -59,6 +59,7 @@ STR = src/ft_str/ft_split.c \
 	src/ft_str/ft_strtrim.c \
 	src/ft_str/ft_substr.c \
 	src/ft_str/ft_strcmp.c \
+	src/ft_str/ft_strcpy.c \
 
 LST = src/ft_lst/ft_lstnew.c \
 	src/ft_lst/ft_lstadd_front.c \

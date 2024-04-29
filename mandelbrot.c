@@ -52,7 +52,7 @@ int  ft_mandelbrot(t_complex *z, t_complex *c)
 
 void  ft_draw(t_fractol *fract, int x, int y, int i)
 {
-  int color = 0;
+  fract->color = 0;
 
   if (i == M_ITER)
     color = BLACK;
@@ -90,3 +90,13 @@ int color_map(int i) {
     // Combine RGB components into a single color value
     return (red << 16) | (green << 8) | blue;
 }
+
+/*void  ft_psychedellic(t_fractol *fract)
+{
+  static int colors[] = {BLACK, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, WHITE, BBLK, BRED, BGRN, BYEL, BBLU, BMAG, BCYN, BWHT, UBLK, URED, UGRN, UYEL, UBLU, UMAG, UCYN, UWHT, BLKB, REDB, GRNB, YELB, BLUB, MAGB, CYNB, WHTB, BLKHB, REDHB, GRNHB, YELHB, BLUHB, MAGHB, CYNHB, WHTHB, HBLK, HRED, HGRN, HYEL, HBLU, HMAG, HCYN, HWHT, BHBLK, BHRED, BHGRN, BHYEL, BHBLU, BHMAG, BHCYN, BHWHT};
+  static int color_code = 0;
+
+  color_code = (color_code + 1) % (sizeof(colors) / sizeof(colors[0]));
+  fract->color = colors[color_code]; // ADD COLOR TO >H
+  ft_render_fract(fract); //TO DO
+}*/

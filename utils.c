@@ -89,3 +89,11 @@ void  ft_2fract_args(t_fractol *fract, char *av1)
   else if (!ft_strncmp(av1, "b", 1))
     ft_strcpy(fract->name, "Burning Ship");
 }
+
+void  ft_julia_data(t_fractol *fract)
+{
+  fract->max_r = 2.5;
+  fract->min_r = -2.5;
+  fract->max_i = 1.5;
+  fract->min_i = -1.5;
+}

@@ -30,7 +30,7 @@
 // ========WINDOW SIZE
 # define WIDTH 1366
 # define HEIGHT 768
-# define M_ITER 500
+# define M_ITER 1000
 
 // ========COLORS
 # define BLACK			0x000000
@@ -85,6 +85,13 @@ typedef struct s_img
 	int		line_length;
 	int		endian;
 }	t_img;
+
+typedef struct s_rbg
+{
+  int r;
+  int b;
+  int g;
+} t_rbg;
 
 typedef struct t_complex
 {

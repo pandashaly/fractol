@@ -15,7 +15,7 @@
 
 // =======LIBRARIES
 # include "mlx.h"
-# include "colors.h"
+//# include "colors.h"
 # include <math.h>
 # include "../libs/libft/inc/libft.h"
 # include <fcntl.h>
@@ -33,21 +33,21 @@
 # define M_ITER 500
 
 // ========COLORS
-//# define BLACK			0x000000
-//# define WHITE			0xFFFFFF
-//# define GREEN			0x00FF00
-//# define BLUE			0x0000FF
-//# define RED            0xFF0000
-//# define MAGENTA		0xFF00FF
+# define BLACK			0x000000
+# define WHITE			0xFFFFFF
+# define GREEN			0x00FF00
+# define BLUE			0x0000FF
+# define RED            0xFF0000
+# define MAGENTA		0xFF00FF
 # define LIME			0xCCFF00
 # define ORANGE			0xFF6600
 # define PURPLE			0x9932CC
-//# define CYAN			0x33CCCC
+# define CYAN			0x33CCCC
 # define PINK			0xFF66B2
 # define ELECTRIC		0x0066FF
 # define LIGHTNING		0x00CCFF
 # define LAVA			0xFF3300
-//# define YELLOW			0xFFFF00
+# define YELLOW			0xFFFF00
 # define PASTELYELLOW	0xFFFF99
 # define PASTELPINK		0xFFB6C1
 # define LILAC          0xEFB1FF
@@ -109,6 +109,8 @@ typedef struct s_fractol
   int   color;
 } t_fractol;
 
+void  ft_psychedellic(t_fractol *fract);
+int ft_key_press(int key, t_fractol *fract);
 void  ft_init_burningship(t_fractol *fract);
 int   ft_burningship(t_complex *z, t_complex *c);
 void  ft_init_feather(t_fractol *fract, double fx, double fy);

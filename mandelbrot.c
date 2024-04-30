@@ -55,10 +55,10 @@ void  ft_draw(t_fractol *fract, int x, int y, int i)
   fract->color = 0;
 
   if (i == M_ITER)
-    color = BLACK;
+    fract->color = BLACK;
   else 
-    color = blend_colours(BLACK, RED, (double)i / M_ITER);
-  ft_put_pixel(fract, x, y, color);
+    fract->color = blend_colours(BLACK, RED, (double)i / M_ITER);
+  ft_put_pixel(fract, x, y, fract->color);
 }
 
 int	blend_colours(int colour1, int colour2, double t)
@@ -91,12 +91,12 @@ int color_map(int i) {
     return (red << 16) | (green << 8) | blue;
 }
 
-/*void  ft_psychedellic(t_fractol *fract)
+void  ft_psychedellic(t_fractol *fract)
 {
-  static int colors[] = {BLACK, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, WHITE, BBLK, BRED, BGRN, BYEL, BBLU, BMAG, BCYN, BWHT, UBLK, URED, UGRN, UYEL, UBLU, UMAG, UCYN, UWHT, BLKB, REDB, GRNB, YELB, BLUB, MAGB, CYNB, WHTB, BLKHB, REDHB, GRNHB, YELHB, BLUHB, MAGHB, CYNHB, WHTHB, HBLK, HRED, HGRN, HYEL, HBLU, HMAG, HCYN, HWHT, BHBLK, BHRED, BHGRN, BHYEL, BHBLU, BHMAG, BHCYN, BHWHT};
+  static int color_arr[] = {BLACK, RED, GREEN, YELLOW, BLUE, WHITE, LIGHTNING, LIME, LILAC, PINK, LAVA, CYAN, ORANGE};
   static int color_code = 0;
 
-  color_code = (color_code + 1) % (sizeof(colors) / sizeof(colors[0]));
-  fract->color = colors[color_code]; // ADD COLOR TO >H
-  ft_render_fract(fract); //TO DO
-}*/
+  color_code = (color_code + 1) % (sizeof(color_arr) / sizeof(color_arr[0]));
+  fract->color = color_arr[color_code]; // ADD COLOR TO >H
+  ft_init_fractol(fract); //TO DO
+}

@@ -25,7 +25,12 @@ int ft_mouse_hook(int button, int x, int y, t_fractol *fract)
 
 //int ft_keyhooks(int key, t_fractol, *fract)
 
-
+int ft_key_press(int key, t_fractol *fract)
+{
+    if (key == XK_space) // Check if the spacebar key is pressed
+        ft_psychedellic(fract); // Call the function to cycle through colors
+    return (0);
+}
 
 int ft_esc_key(int key, t_fractol *fract)
 {
@@ -39,6 +44,7 @@ void    ft_keyhooks(t_fractol *fract)
     mlx_hook(fract->window, 17, 0, ft_close_window, fract);
     mlx_mouse_hook(fract->window, ft_mouse_hook, fract);
     mlx_hook(fract->window, 3, 1L << 1, ft_esc_key, fract);
+    mlx_hook(fract->window, 2, 1L << 0, ft_key_press, fract);
 }
 
 

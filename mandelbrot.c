@@ -52,13 +52,13 @@ int  ft_mandelbrot(t_complex *z, t_complex *c)
 
 void  ft_draw(t_fractol *fract, int x, int y, int i)
 {
-  fract->color = 0;
+  int rbg = 0;
 
   if (i == M_ITER)
-    fract->color = BLACK;
+    rbg = BLACK;
   else 
-    fract->color = blend_colours(BLACK, RED, (double)i / M_ITER);
-  ft_put_pixel(fract, x, y, fract->color);
+    rbg = blend_colours(BLACK, fract->color, (double)i / M_ITER);
+  ft_put_pixel(fract, x, y, rbg);
 }
 
 int	blend_colours(int colour1, int colour2, double t)
@@ -97,6 +97,6 @@ void  ft_psychedellic(t_fractol *fract)
   static int color_code = 0;
 
   color_code = (color_code + 1) % (sizeof(color_arr) / sizeof(color_arr[0]));
-  fract->color = color_arr[color_code]; // ADD COLOR TO >H
-  ft_init_fractol(fract); //TO DO
+  fract->color = color_arr[color_code];
+  ft_init_fractol(fract);
 }

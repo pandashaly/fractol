@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   ft_atof.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ssottori <ssottori@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/01 16:15:04 by ssottori          #+#    #+#             */
-/*   Updated: 2024/05/01 17:12:26 by ssottori         ###   ########.fr       */
+/*   Created: 2024/05/01 17:18:59 by ssottori          #+#    #+#             */
+/*   Updated: 2024/05/01 17:19:16 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/fractol.h"
+#include "libft.h"
 
-/*double	ft_atof(char *str)
+double	ft_atof(char *str)
 {
 	double	integer;
 	double	fraction;
@@ -38,14 +38,4 @@
 		fraction = fraction + (*str++ - '0') * pwr;
 	}
 	return ((integer + fraction) * sign);
-}*/
-
-/*void  ft_julia_data(t_fractol *fract)
-{
-	fract->max_r = 2.5;
-	fract->min_r = -2.5;
-	fract->max_i = 1.5;
-	fract->min_i = -1.5;
 }
-
-*/

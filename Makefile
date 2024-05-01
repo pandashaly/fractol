@@ -39,7 +39,6 @@ SRCS = 	$(SRC_DIR)/fractol.c \
 		$(SRC_DIR)/mandelbrot.c \
 		$(SRC_DIR)/julia.c \
 		$(SRC_DIR)/burning_ship.c \
-		$(SRC_DIR)/utils.c \
 		$(SRC_DIR)/init.c \
 		$(SRC_DIR)/colorschemes.c \
 		$(SRC_DIR)/color.c \

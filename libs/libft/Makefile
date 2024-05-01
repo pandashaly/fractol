@@ -76,6 +76,7 @@ TO = src/ft_to/ft_toupper.c \
 	src/ft_to/ft_atoi.c \
 	src/ft_to/ft_itoa.c \
 	src/ft_to/ft_atol.c \
+	src/ft_to/ft_atof.c \
 
 PRINTF = src/ft_printf/ft_printf.c \
 	src/ft_printf/utils.c \

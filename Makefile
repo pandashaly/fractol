@@ -42,6 +42,9 @@ SRCS = 	$(SRC_DIR)/fractol.c \
 		$(SRC_DIR)/utils.c \
 		$(SRC_DIR)/init.c \
 		$(SRC_DIR)/colorschemes.c \
+		$(SRC_DIR)/color.c \
+		$(SRC_DIR)/render.c \
+
 
 OBJS = $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 

@@ -12,6 +12,17 @@
 
 #include "../inc/fractol.h"
 
+void	ft_set_colorscheme(t_fractol *fract, int key)
+{
+	if (key >= 1 && key <= 3)
+	{
+		fract->colorscheme = key;
+		fract->diff_colorscheme = true;
+	}
+    else if (key == 0)
+        fract->diff_colorscheme = false;
+}
+
 t_rbg	classic(float x)
 {
 	t_rbg	color;

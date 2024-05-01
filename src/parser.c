@@ -21,6 +21,30 @@ void	ft_arg_err(void)
 	exit(EXIT_FAILURE);
 }
 
+void	ft_4fract_args(t_fractol *fract, char *av1, char *av2, char *av3)
+{
+	if (!ft_strncmp(av1, "j", 1))
+	{
+		ft_strcpy(fract->name, "Julia");
+		fract->julia_r = ft_atof(av2);
+		fract->julia_i = ft_atof(av3);
+	}
+	else if (!ft_strncmp(av1, "f", 1))
+	{
+		ft_strcpy(fract->name, "Feather");
+		fract->fx = ft_atof(av2);
+		fract->fy = ft_atof(av3);
+	}
+}
+
+void	ft_2fract_args(t_fractol *fract, char *av1)
+{
+	if (!ft_strncmp(av1, "m", 1))
+		ft_strcpy(fract->name, "Mandelbrot");
+	else if (!ft_strncmp(av1, "b", 1))
+		ft_strcpy(fract->name, "Burning Ship");
+}
+
 /*void  ft_args_checks(char *name, int ac, char **av)
 {
 	if (ac == 2 && (!ft_strncmp(av[1], "m", 1)

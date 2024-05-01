@@ -4,7 +4,7 @@
 [x] add zoom in - zoom out ==== doesn't work
 [] add color blend function to keyhook
 [x] get julia to work
-[] more detail
+[x] more detail
 [] init data??
 [x] split up mandelbrot function into 3
 [] add mousehook - print coordinates of mouse on screen
@@ -13,6 +13,8 @@
 [x] add colorschemes functions
 [] add data init for maxr minr maxi mini
 []add julia presets randomized julia set funcition
+[] keyhook j for julia random function
+[] keyhooks m and b to switch between fractals
 [x] add random color rotation
 [x] IMPORTANT -- make ft_render function so you cna render again when zooming
 

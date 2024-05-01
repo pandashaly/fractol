@@ -12,6 +12,18 @@
 
 #include "../inc/fractol.h"
 
+void	ft_init_fractol(t_fractol *fract)
+{
+	if (ft_strcmp(fract->name, "Mandelbrot") == 0)
+		ft_init_mandelbrot(fract);
+	else if (ft_strcmp(fract->name, "Julia") == 0)
+		ft_init_julia(fract, fract->julia_r, fract->julia_i);
+	else if (ft_strcmp(fract->name, "Burning Ship") == 0)
+		ft_init_burningship(fract);
+	else
+		ft_arg_err();
+}
+
 void	ft_init_image(t_fractol *fract)
 {
 	fract->img.img = mlx_new_image(fract->mlx, WIDTH, HEIGHT);

@@ -12,7 +12,19 @@
 
 #include "../inc/fractol.h"
 
-void	ft_render(t_fractol *fract)
+void	ft_put_pixel(t_fractol *fract, int x, int y, int rbg)
+{
+	char	*dst;
+
+	if (x >= 0 && x < WIDTH && y >= 0 && y < HEIGHT)
+	{
+		dst = fract->img.addy + (y * fract->img.line_length
+				+ x * (fract->img.bpp / 8));
+		*(unsigned int *)dst = rbg;
+	}
+}
+
+/*void	ft_render(t_fractol *fract)
 {
 	int	x;
 	int	y;
@@ -25,4 +37,28 @@ void	ft_render(t_fractol *fract)
 			ft_draw_fract(x, y, fract);
 	}
 	mlx_put_image_to_window(fract->mlx, fract->window, fract->img.img, 0, 0);
+}*/
+
+void	ft_draw(t_fractol *fract, int x, int y, int i)
+{
+	int		rbg;
+	double	t;
+	t_rbg	color;
+
+	rbg = 0;
+	if (fract->diff_colorscheme)
+	{
+		t = (double)i / M_ITER;
+		color = color_map(t, fract->colorscheme);
+		rbg = (color.r << 16) | (color.g << 8) | color.b;
+		ft_put_pixel(fract, x, y, rbg);
+	}
+	else
+	{
+		if (i == M_ITER)
+			rbg = BLACK;
+		else
+			rbg = blend_colours(BLACK, fract->color, (double)i / M_ITER);
+		ft_put_pixel(fract, x, y, rbg);
+	}
 }

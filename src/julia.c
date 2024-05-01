@@ -28,9 +28,9 @@ void	ft_init_julia(t_fractol *fract, double julia_r, double julia_i)
 		{
 			c.real = julia_r;
 			c.delulu = julia_i;
-			z.real = (double)x / WIDTH * (MAX_REAL - MIN_REAL) + MIN_REAL;
-			z.delulu = (double)y / HEIGHT * (MAX_IMAGINARY
-					- MIN_IMAGINARY) + MIN_IMAGINARY;
+			z.real = (double)x / WIDTH * (2.0 - -2.0) + -2.0;
+			z.delulu = (double)y / HEIGHT * (2.0
+					- -2.0) + -2.0;
 			i = ft_julia(&z, &c);
 			ft_draw(fract, x, y, i);
 			y++;

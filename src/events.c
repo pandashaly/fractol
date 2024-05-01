@@ -31,7 +31,9 @@ int	ft_key_press(int key, t_fractol *fract)
 		ft_psychedellic(fract);
 	else if (key >= XK_0 && key <= XK_3)
 		ft_set_colorscheme(fract, key - XK_0);
-	ft_init_fractol(fract);
+    else if (key == XK_m)
+        ft_init_mandelbrot(fract);
+    ft_init_fractol(fract);
 	return (0);
 }
 

@@ -21,6 +21,7 @@
 # include <fcntl.h>
 # include <unistd.h>
 # include <stdarg.h>
+# include <stdbool.h>
 # include <stdlib.h>
 # include <stdio.h>
 # include <math.h>
@@ -30,7 +31,7 @@
 // ========WINDOW SIZE
 # define WIDTH 1366
 # define HEIGHT 768
-# define M_ITER 1000
+# define M_ITER 200
 
 // ========COLORS
 # define BLACK			0x000000
@@ -114,8 +115,14 @@ typedef struct s_fractol
   t_complex c;
   double zoom;
   int   color;
+  int   colorscheme;
+  bool  diff_colorscheme;
 } t_fractol;
 
+t_rbg   color_map(float t, int colorscheme);
+t_rbg   classic(float x);
+t_rbg   alternate(float x);
+void   ft_set_colorscheme(t_fractol *fract, int key);
 void  ft_psychedellic(t_fractol *fract);
 int ft_key_press(int key, t_fractol *fract);
 void  ft_init_burningship(t_fractol *fract);
@@ -126,7 +133,7 @@ void  ft_4fract_args(t_fractol *fract, char *av1, char *av2, char *av3);
 void  ft_2fract_args(t_fractol *fract, char *av1);
 
 double  ft_atof(char *str);
-int color_map(int i);
+//int color_map(int i);
 void  ft_init_data(t_fractol *fract);
 void  ft_run_test(t_fractol *fract);
 void  ft_malloc_err(void);

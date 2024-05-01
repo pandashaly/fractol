@@ -29,10 +29,13 @@ int ft_key_press(int key, t_fractol *fract)
 {
     if (key == XK_space) // Check if the spacebar key is pressed
       ft_psychedellic(fract);
+    else if (key >= XK_1 && key <= XK_3)
+      ft_set_colorscheme(fract, key - XK_0);
+    ft_init_fractol(fract);
     return (0);
 }
 
-/*int   ft_key_press(int key, t_fractol *fract)
+/*int   ft_key_fun(int key, t_fractol *fract)
 {
 	  if (key == XK_Left || keysym == XK_a)
 		  fract->shift_r += (0.1 * fract->zoom);

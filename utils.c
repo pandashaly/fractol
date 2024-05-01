@@ -96,4 +96,15 @@ void  ft_2fract_args(t_fractol *fract, char *av1)
   fract->min_r = -2.5;
   fract->max_i = 1.5;
   fract->min_i = -1.5;
-}*/
+}
+
+*/
+
+void   ft_set_colorscheme(t_fractol *fract, int key)
+{
+  if (key >= 1 && key <= 3)
+  {
+    fract->colorscheme = key;
+    fract->diff_colorscheme = true;
+  }
+}

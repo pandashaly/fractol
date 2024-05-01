@@ -17,9 +17,17 @@ int	ft_mouse_hook(int button, int x, int y, t_fractol *fract)
 	(void)x;
 	(void)y;
 	if (button == M_ZOOM_IN)
-		fract->zoom += 1.1;
+    {
+		fract->zoom += ZOOM;
+        ft_init_fractol(fract);
+        printf("%d up\n", button);
+    }
 	else if (button == M_ZOOM_OUT)
-		fract->zoom /= 1.1;
+    {
+		fract->zoom -= ZOOM;
+        ft_init_fractol(fract);
+        printf("%d down\n", button);
+    }
 	return (0);
 }
 

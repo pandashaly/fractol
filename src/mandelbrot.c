@@ -26,8 +26,8 @@ void	ft_init_mandelbrot(t_fractol *fract)
 		y = 0;
 		while (y < HEIGHT)
 		{
-			c.real = (double)x / WIDTH * (MAX_REAL - MIN_REAL) + MIN_REAL;
-			c.delulu = (double)y / HEIGHT * (MAX_IMAGINARY
+			c.real = (double)x / WIDTH / fract->zoom * (MAX_REAL - MIN_REAL) + MIN_REAL;
+			c.delulu = (double)y / HEIGHT / fract->zoom * (MAX_IMAGINARY
 					- MIN_IMAGINARY) + MIN_IMAGINARY;
 			z.real = 0;
 			z.delulu = 0;

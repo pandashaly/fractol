@@ -30,10 +30,12 @@
 # include <X11/keysym.h>
 
 // ========WINDOW SIZE
-# define WIDTH 1366
-# define HEIGHT 768
+# define WIDTH 1920
+# define HEIGHT 1080
 # define M_ITER 200
 
+//# define WIDTH 1366
+//# define HEIGHT 768
 // ========COLORS
 # define BLACK			0x000000
 # define WHITE			0xFFFFFF
@@ -83,7 +85,7 @@
 # define MIN_REAL      -2.5
 # define MAX_IMAGINARY  1.5
 # define MIN_IMAGINARY -1.5
-# define ZOOM 1.1
+# define ZOOM 0.4
 
 // ==========STRUCTS
 
@@ -138,6 +140,7 @@ typedef struct s_fractol
     double      zoom;
     int         offset_x;
     int         offset_y;
+
 }	t_fractol;
 
 

@@ -24,21 +24,6 @@ void	ft_put_pixel(t_fractol *fract, int x, int y, int rbg)
 	}
 }
 
-/*void	ft_render(t_fractol *fract)
-{
-	int	x;
-	int	y;
-
-	y = -1;
-	while (++y < HEIGHT)
-	{
-		x = -1;
-		while (++x < WIDTH)
-			ft_draw_fract(x, y, fract);
-	}
-	mlx_put_image_to_window(fract->mlx, fract->window, fract->img.img, 0, 0);
-}*/
-
 void	ft_draw(t_fractol *fract, int x, int y, int i)
 {
 	int		rbg;

@@ -61,3 +61,29 @@ t_rbg	color_map(float t, int colorscheme)
 		return (alternate(t));
 	return ((t_rbg){255, 0, 0});
 }
+
+/*t_palette	*get_palettes(void)
+{
+	static t_palette	array[5];
+
+	array[0] =
+		(t_palette){5, 0, {BLACK, RED, GREEN, YELLOW, BLUE}};
+	array[1] =
+		(t_palette){5, 0, {MAGENTA, PURPLE, BLUE, WHITE, PASTELPINK}};
+	array[2] =
+		(t_palette){5, 0, {ELECTRIC, WHITE, CYAN, PINK, LILAC}};
+	array[3] =
+		(t_palette){7, 10, {BLACK, ORANGE, LIGHTNING, LAVA, BLUE, PURPLE, LIGHTNING}};
+	array[4] = (t_palette){0, 0, {0}};
+	return (array);
+}
+
+t_rbg   smooth_operator(double i, t_palette *p)
+{
+    double zn = log(p->c.r * p->c.r + p->c.i * p->c.i) / 2.0f;
+    double nu = log(zn / log(2)) / log(2);
+    double t = i + 1 - nu;
+    if (t < 0)
+        t = 0;
+    return (t, , p);
+}*/

@@ -78,16 +78,23 @@
 
 # define PI 3.141592653
 
+// =========SIZES
 # define MAX_REAL       1.5
 # define MIN_REAL      -2.5
 # define MAX_IMAGINARY  1.5
 # define MIN_IMAGINARY -1.5
+# define ZOOM 1.1
 
 // ==========STRUCTS
 
+typedef struct s_palette
+{
+    int cycle;
+    int colors[16];
+}   t_palette;
+
 typedef struct s_data
 {
-	double	zoom;
 	double	m_iter;
 }	t_data;
 
@@ -125,12 +132,16 @@ typedef struct s_fractol
 	double		fy;
 	t_complex	z;
 	t_complex	c;
-	double		zoom;
 	int			color;
 	int			colorscheme;
 	bool		diff_colorscheme;
+    double      zoom;
+    int         offset_x;
+    int         offset_y;
 }	t_fractol;
 
+
+t_palette	*get_palettes(void);
 t_rbg	color_map(float t, int colorscheme);
 t_rbg	classic(float x);
 t_rbg	alternate(float x);

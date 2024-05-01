@@ -9,14 +9,15 @@
 [x] split up mandelbrot function into 3
 [] add mousehook - print coordinates of mouse on screen
 [x] implement burning ship
-[] implement feather
-[] add colorschemes functions
+[x] implement feather
+[x] add colorschemes functions
 [] add data init for maxr minr maxi mini
 []add julia presets randomized julia set funcition
-[] add random color rotation
-[] IMPORTANT -- make ft_render function so you cna render again when zooming
+[x] add random color rotation
+[x] IMPORTANT -- make ft_render function so you cna render again when zooming
 
 to fix/finish
-[] color cycle - ft_psychedelic
+[x] color cycle - ft_psychedelic
 [] data-init function for mandelbrot and julia
-[]
+[] reset bool to false with 0
+[] 

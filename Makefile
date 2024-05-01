@@ -6,7 +6,7 @@
 #    By: otodd <otodd@student.42london.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/05 19:29:37 by ssottori          #+#    #+#              #
-#    Updated: 2024/05/01 15:25:03 by otodd            ###   ########.fr        #
+#    Updated: 2024/05/01 15:39:15 by otodd            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -91,13 +91,13 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | dir
 
 clean:
 	@echo "[$(RED)FRACTOL$(NC)] Cleaning object files..."
-			$(MAKE) -C $(LIBFT_PATH) clean
-			@$(RM) $(OBJS)
+	$(MAKE) -C $(LIBFT_PATH) clean
+	@$(RM) $(OBJ_DIR)
 
 fclean: clean
 	@echo "[$(RED)FRACTOL$(NC)] Cleaning executable file..."
-			$(MAKE) -C $(LIBFT_PATH) fclean
-			@$(RM) $(NAME)
+	$(MAKE) -C $(LIBFT_PATH) fclean
+	@$(RM) $(NAME)
 
 re: fclean all
 

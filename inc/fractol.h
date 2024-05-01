@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fractol.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ssottori <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: otodd <otodd@student.42london.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 09:35:54 by ssottori          #+#    #+#             */
-/*   Updated: 2024/04/21 15:45:40 by ssottori         ###   ########.fr       */
+/*   Updated: 2024/05/01 15:16:01 by otodd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,11 @@
 # define FRACTOL_H
 
 // =======LIBRARIES
-# include "mlx.h"
+# include "../libs/mlx/mlx.h"
 //# include "colors.h"
 # include <math.h>
 # include "../libs/libft/inc/libft.h"
+# include "../libs/libft/inc/ft_printf.h"
 # include <fcntl.h>
 # include <unistd.h>
 # include <stdarg.h>
@@ -25,8 +26,8 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <math.h>
-# include <X11/X.h> //X11 functions & data types for graphics and window management
-# include <X11/keysym.h> //to identify keyboard events. allows you to map keycodes to more human-readable key symbols
+# include <X11/X.h>
+# include <X11/keysym.h>
 
 // ========WINDOW SIZE
 # define WIDTH 1366
@@ -74,9 +75,9 @@
 
 typedef struct s_data
 {
-  double  zoom;
-  double  m_iter;
-} t_data;
+	double	zoom;
+	double	m_iter;
+}	t_data;
 
 typedef struct s_img
 {
@@ -89,76 +90,73 @@ typedef struct s_img
 
 typedef struct s_rbg
 {
-  int r;
-  int b;
-  int g;
-} t_rbg;
+	int	r;
+	int	b;
+	int	g;
+}	t_rbg;
 
 typedef struct t_complex
 {
-    double  real;
-    double  delulu;
-}   t_complex;
+	double	real;
+	double	delulu;
+}	t_complex;
 
 typedef struct s_fractol
 {
+	void		*mlx;
+	void		*window;
+	char		name[15];
+	t_img		img;
+	double		julia_i;
+	double		julia_r;
+	double		fx;
+	double		fy;
+	t_complex	z;
+	t_complex	c;
+	double		zoom;
+	int			color;
+	int			colorscheme;
+	bool		diff_colorscheme;
+}	t_fractol;
 
-  void  *mlx;
-  void  *window;
-  char  name[15];
-  t_img   img;
-  double    julia_i;
-  double    julia_r;
-  double    fx;
-  double    fy;
-  t_complex z;
-  t_complex c;
-  double zoom;
-  int   color;
-  int   colorscheme;
-  bool  diff_colorscheme;
-} t_fractol;
+t_rbg	color_map(float t, int colorscheme);
+t_rbg	classic(float x);
+t_rbg	alternate(float x);
+void	ft_set_colorscheme(t_fractol *fract, int key);
+void	ft_psychedellic(t_fractol *fract);
+int		ft_key_press(int key, t_fractol *fract);
+void	ft_init_burningship(t_fractol *fract);
+int		ft_burningship(t_complex *z, t_complex *c);
+void	ft_4fract_args(t_fractol *fract, char *av1, char *av2, char *av3);
+void	ft_2fract_args(t_fractol *fract, char *av1);
 
-t_rbg   color_map(float t, int colorscheme);
-t_rbg   classic(float x);
-t_rbg   alternate(float x);
-void   ft_set_colorscheme(t_fractol *fract, int key);
-void  ft_psychedellic(t_fractol *fract);
-int ft_key_press(int key, t_fractol *fract);
-void  ft_init_burningship(t_fractol *fract);
-int   ft_burningship(t_complex *z, t_complex *c);
-void  ft_init_feather(t_fractol *fract, double fx, double fy);
-int   ft_feather(t_complex *z, double fx, double fy);
-void  ft_4fract_args(t_fractol *fract, char *av1, char *av2, char *av3);
-void  ft_2fract_args(t_fractol *fract, char *av1);
-
-double  ft_atof(char *str);
-//int color_map(int i);
-void  ft_init_data(t_fractol *fract);
-void  ft_run_test(t_fractol *fract);
-void  ft_malloc_err(void);
-void  ft_init_mandelbrot(t_fractol *fract);
-int   ft_mandelbrot(t_complex *z, t_complex *c);
-int   ft_julia(t_complex *z, t_complex *c);
-void  ft_draw(t_fractol *fract, int x, int y, int i);
-void  ft_init_canvas(t_fractol *fract);
-void  ft_init_fractol(t_fractol *fract);
-//void  ft_init_mandelbrot(t_fractol *fract);
-int	blend_colours(int colour1, int colour2, double t);
-void  ft_init_julia(t_fractol *fract, double julia_r, double julia_i);
-void    ft_init_test(t_fractol *fract);
-void  ft_put_pixel(t_fractol *fract, int x, int y, int rgb);
-void    draw_circle(t_fractol *fract, int centre_x, int centre_y, int radius);
-void  ft_init_window(t_fractol *fract);
-void  ft_arg_err(void);
-void  ft_args_checks(char *name, int ac, char **av);
-void  ft_keyhooks(t_fractol *fract);
-void    ft_init_image(t_fractol *fract);
-void  ft_readme(void);
-void    ft_render(t_fractol *fract);
-int   ft_esc_key(int key, t_fractol *fract);
-int   ft_close_window(t_fractol *fract);
-int  ft_mouse_hook(int button, int x, int y, t_fractol *fract);
-//int   color_map(t_fractol *fract, int w, int h);
+double	ft_atof(char *str);
+// int color_map(int i);
+void	ft_init_data(t_fractol *fract);
+// void	ft_run_test(t_fractol *fract);
+void	ft_malloc_err(void);
+void	ft_init_mandelbrot(t_fractol *fract);
+int		ft_mandelbrot(t_complex *z, t_complex *c);
+int		ft_julia(t_complex *z, t_complex *c);
+void	ft_draw(t_fractol *fract, int x, int y, int i);
+void	ft_init_canvas(t_fractol *fract);
+void	ft_init_fractol(t_fractol *fract);
+// void  ft_init_mandelbrot(t_fractol *fract);
+int		blend_colours(int colour1, int colour2, double t);
+void	ft_init_julia(t_fractol *fract, double julia_r, double julia_i);
+// void	ft_init_test(t_fractol *fract);
+void	ft_put_pixel(t_fractol *fract, int x, int y, int rgb);
+// void	draw_circle(t_fractol *fract, int centre_x, int centre_y, int radius);
+void	ft_init_window(t_fractol *fract);
+void	ft_arg_err(void);
+// void	ft_args_checks(char *name, int ac, char **av);
+void	ft_keyhooks(t_fractol *fract);
+void	ft_init_image(t_fractol *fract);
+void	ft_readme(void);
+void	ft_render(t_fractol *fract);
+int		ft_esc_key(int key, t_fractol *fract);
+int		ft_close_window(t_fractol *fract);
+int		ft_mouse_hook(int button, int x, int y, t_fractol *fract);
+// int   color_map(t_fractol *fract, int w, int h);
 
 #endif

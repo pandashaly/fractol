@@ -3,37 +3,38 @@
 /*                                                        :::      ::::::::   */
 /*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ssottori <ssottori@student.42london.com>   +#+  +:+       +#+        */
+/*   By: otodd <otodd@student.42london.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 14:31:34 by ssottori          #+#    #+#             */
-/*   Updated: 2024/04/19 13:58:49 by ssottori         ###   ########.fr       */
+/*   Updated: 2024/05/01 14:42:14 by otodd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <mlx.h>
-#include "fractol.h"
+#include "../inc/fractol.h"
 
 void  ft_init_test(t_fractol *fract)
 {
-  ft_init_window(fract);
-  fract->img.img = mlx_new_image(fract->mlx, WIDTH, HEIGHT);
-  fract->img.addy = mlx_get_data_addr(fract->img.img,
-      &fract->img.bpp, &fract->img.line_length, &fract->img.endian);
-  ft_run_test(fract);
-  mlx_put_image_to_window(fract->mlx, fract->window, fract->img.img, 0, 0);
-  ft_keyhooks(fract);
+    ft_init_window(fract);
+    fract->img.img = mlx_new_image(fract->mlx, WIDTH, HEIGHT);
+    fract->img.addy = mlx_get_data_addr(fract->img.img,
+        &fract->img.bpp, &fract->img.line_length, &fract->img.endian);
+    ft_run_test(fract);
+    mlx_put_image_to_window(fract->mlx, fract->window, fract->img.img, 0, 0);
+    ft_keyhooks(fract);
 }
 
 void  ft_run_test(t_fractol *fract)
 {
-  int n = 300;
-  color_map(fract, WIDTH, HEIGHT);
-  while (n < 306)
-  {
-    printf("%d", n);
-    draw_circle(fract, 960, 540, n);
-    n++;
-  }
+    int n = 300;
+
+    color_map(fract, WIDTH, HEIGHT);
+    while (n < 306)
+    {
+        printf("%d", n);
+        draw_circle(fract, 960, 540, n);
+        n++;
+    }
 }
 
 void    draw_circle(t_fractol *fract, int centre_x, int centre_y, int radius)

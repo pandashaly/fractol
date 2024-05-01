@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ssottori <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: otodd <otodd@student.42london.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/05 19:29:37 by ssottori          #+#    #+#              #
-#    Updated: 2024/04/22 16:40:06 by ssottori         ###   ########.fr        #
+#    Updated: 2024/05/01 15:25:03 by otodd            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,12 +19,12 @@ GREEN=\033[1;32m
 NC=\033[0m
 
 # ===============FLAGS=================
-CCFLAGS = cc -Wall -Wextra -Werror -g
+CCFLAGS = cc -Wall -Wextra -Werror
 RM = rm -rf
 NAME = fractol
 
 SRC_DIR = src
-# OBJ_DIR = obj
+OBJ_DIR = obj
 INC = inc
 LIBFT_PATH = libs/libft
 LFLAGS = -L$(LIBFT_PATH) -lft
@@ -32,18 +32,17 @@ IFLAGS = -I$(INC) -I$(LIBFT_PATH)/inc
 LIBFT = $(LIBFT_PATH)/libft.a
 
 # ================SRCS=================
-SRCS = errors.c \
-	   events.c \
-	   parser.c \
-	   mandelbrot.c \
-		 julia.c \
-		 feather.c \
-		 burning_ship.c \
-	   fractol.c \
-	   utils.c \
-	   window.c \
+SRCS = 	$(SRC_DIR)/fractol.c \
+		$(SRC_DIR)/errors.c \
+		$(SRC_DIR)/events.c \
+		$(SRC_DIR)/parser.c \
+		$(SRC_DIR)/mandelbrot.c \
+		$(SRC_DIR)/julia.c \
+		$(SRC_DIR)/burning_ship.c \
+		$(SRC_DIR)/utils.c \
+		$(SRC_DIR)/window.c \
 
-OBJS = $(SRCS:.c=.o)
+OBJS = $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
 # ================MLX===================
 
@@ -73,6 +72,9 @@ IFLAGS += -I$(MLX_PATH)
 
 all: $(MLX) $(LIBFT) $(NAME)
 
+dir:
+	@mkdir -p $(OBJ_DIR)
+
 $(MLX): 
 	$(MAKE) -C $(MLX_PATH)
 
@@ -80,11 +82,10 @@ $(LIBFT):
 	$(MAKE) -C $(LIBFT_PATH)
 
 $(NAME): $(OBJS)
-			$(CCFLAGS) $(OBJS) $(MLX) $(IFLAGS) $(LFLAGS) -o $(NAME) -lX11 -lXext -lm
+	$(CCFLAGS) $(OBJS) $(MLX) $(IFLAGS) $(LFLAGS) -o $(NAME) -lX11 -lXext -lm
 	@echo "[$(GREEN)FRACTOL$(NC)] - $<"
 
-%.o: %.c
-#			@mkdir -p $(OBJ_DIR)
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | dir
 	echo "[$(GREEN)FRACTOL$(NC)] - $<"
 	$(CCFLAGS) $(IFLAGS) -c $< -o $@
 

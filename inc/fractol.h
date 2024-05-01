@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fractol.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: otodd <otodd@student.42london.com>         +#+  +:+       +#+        */
+/*   By: ssottori <ssottori@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/07 09:35:54 by ssottori          #+#    #+#             */
-/*   Updated: 2024/05/01 15:16:01 by otodd            ###   ########.fr       */
+/*   Created: 2024/05/01 18:45:03 by ssottori          #+#    #+#             */
+/*   Updated: 2024/05/01 18:45:06 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,18 @@
 # define PASTELYELLOW	0xFFFF99
 # define PASTELPINK		0xFFB6C1
 # define LILAC          0xEFB1FF
+
+// =========JULIA
+# define J1 -0.760
+# define J11 -0.407
+# define J2 -0.173
+# define J22 -0.666
+# define J3 -1.389
+# define J33 0.000
+# define J4 -0.178
+# define J44 -0.650
+# define J5 -0.215
+# define J55 -0.602
 
 // =========KEYS
 # define KEY_ESC 53

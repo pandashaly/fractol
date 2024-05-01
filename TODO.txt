@@ -1,4 +1,4 @@
-[] make smoot color blending function
+[] make smooth color blending function
 [x] offset? fix mandlebrot kind of fixed resolution 
 [] make responsive design + scaling element for diff resolutions
 [x] add zoom in - zoom out ==== doesn't work
@@ -19,5 +19,5 @@
 to fix/finish
 [x] color cycle - ft_psychedelic
 [] data-init function for mandelbrot and julia
-[] reset bool to false with 0
+[x] reset bool to false with 0
 [] 

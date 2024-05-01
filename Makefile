@@ -40,7 +40,8 @@ SRCS = 	$(SRC_DIR)/fractol.c \
 		$(SRC_DIR)/julia.c \
 		$(SRC_DIR)/burning_ship.c \
 		$(SRC_DIR)/utils.c \
-		$(SRC_DIR)/window.c \
+		$(SRC_DIR)/init.c \
+		$(SRC_DIR)/colorschemes.c \
 
 OBJS = $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 

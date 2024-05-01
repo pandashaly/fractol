@@ -29,7 +29,7 @@ int	ft_key_press(int key, t_fractol *fract)
 {
 	if (key == XK_space)
 		ft_psychedellic(fract);
-	else if (key >= XK_1 && key <= XK_3)
+	else if (key >= XK_0 && key <= XK_3)
 		ft_set_colorscheme(fract, key - XK_0);
 	ft_init_fractol(fract);
 	return (0);

@@ -53,3 +53,4 @@ dkms.conf
 fractol
 .vscode
 .DS_STORE
+.gdb_history

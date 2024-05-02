@@ -86,6 +86,7 @@
 # define MAX_IMAGINARY  1.5
 # define MIN_IMAGINARY -1.5
 # define ZOOM 0.4
+# define SHIFT 0.01
 
 // ==========STRUCTS
 
@@ -143,7 +144,7 @@ typedef struct s_fractol
 
 }	t_fractol;
 
-
+void    ft_bullseye(t_fractol *fract, double mouse_x, double mouse_y);
 t_palette	*get_palettes(void);
 t_rbg	color_map(float t, int colorscheme);
 t_rbg	classic(float x);

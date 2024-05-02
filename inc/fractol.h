@@ -138,8 +138,8 @@ typedef struct s_fractol
 	int			colorscheme;
 	bool		diff_colorscheme;
     double      zoom;
-    int         shift_r;
-    int         shift_i;
+    double         shift_r;
+    double         shift_i;
 
 }	t_fractol;
 

@@ -20,13 +20,11 @@ int	ft_mouse_hook(int button, int x, int y, t_fractol *fract)
     {
 		fract->zoom += ZOOM;
         ft_init_fractol(fract);
-        printf("%d up\n", button);
     }
 	else if (button == M_ZOOM_OUT)
     {
 		fract->zoom -= ZOOM;
         ft_init_fractol(fract);
-        printf("%d down\n", button);
     }
 	return (0);
 }
@@ -41,13 +39,7 @@ int	ft_key_press(int key, t_fractol *fract)
 		ft_set_colorscheme(fract, key - XK_0);
     else if (key == XK_m)
         ft_init_mandelbrot(fract);
-    ft_init_fractol(fract);
-	return (0);
-}
-
-/*int   ft_key_fun(int key, t_fractol *fract)
-{
-	if (key == XK_Left || keysym == XK_a)
+    else if (key == XK_Left || keysym == XK_a)
 		fract->shift_r += (0.1 * fract->zoom);
 	else if (key == XK_Right || keysym == XK_d)
 		fract->shift_r -= (0.1 * fract->zoom);
@@ -55,15 +47,9 @@ int	ft_key_press(int key, t_fractol *fract)
 		fract->shift_i -= (0.1 * fract->zoom);
 	else if (key == XK_Down || keysym == XK_s)
 		fract->shift_i += (0.1 * fract->zoom);
-	else if (key == XK_KP_Add)
-		fract->iterations += 30;
-	else if (key == XK_KP_Subtract)
-		fract->iterations -= 30;
-	else if (key == XK_space)
-		ft_psychedellic(fract);
 	ft_init_fractol(fract); 						
 	return (0);
-}*/
+}
 
 int	ft_esc_key(int key, t_fractol *fract)
 {

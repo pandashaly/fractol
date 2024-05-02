@@ -23,16 +23,12 @@ int	ft_mouse_hook(int button, int x, int y, t_fractol *fract)
     {
 		fract->zoom += ZOOM;
         ft_bullseye(fract, mouse_x, mouse_y);
-        //fract->shift_r = 0.0;
-        //fract->shift_i = 0.0;
         ft_init_fractol(fract);
     }
 	else if (button == M_ZOOM_OUT)
     {
 		fract->zoom -= ZOOM;
         ft_bullseye(fract, mouse_x, mouse_y);
-        //fract->shift_r = 0.0;
-        //fract->shift_i = 0.0;
         ft_init_fractol(fract);
     }
 	return (0);
@@ -40,12 +36,9 @@ int	ft_mouse_hook(int button, int x, int y, t_fractol *fract)
 
 void ft_bullseye(t_fractol *fract, double mouse_x, double mouse_y)
 {
-    // Calculate shift based on mouse position
-    fract->shift_r += (mouse_x - 0.5) * SHIFT * fract->zoom;
-    fract->shift_i -= (mouse_y - 0.5) * SHIFT * fract->zoom;
+    fract->shift_r += (mouse_x - 0.3) * SHIFT * fract->zoom;
+    fract->shift_i -= (mouse_y - 0.3) * SHIFT * fract->zoom;
 }
-
-//int ft_keyhooks(int key, t_fractol, *fract)
 
 int	ft_key_press(int key, t_fractol *fract)
 {

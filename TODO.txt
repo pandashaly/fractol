@@ -24,4 +24,4 @@ to fix/finish
 [x] data-init function for mandelbrot and julia
 [x] reset bool to false with 0
 [] MOUSE ZOOM -
-
+TRY ZOOM TO MISSLE OF SCREEN

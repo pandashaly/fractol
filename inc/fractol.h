@@ -32,7 +32,7 @@
 // ========WINDOW SIZE
 # define WIDTH 1920
 # define HEIGHT 1080
-# define M_ITER 200
+# define M_ITER 300
 
 //# define WIDTH 1366
 //# define HEIGHT 768
@@ -86,7 +86,7 @@
 # define MAX_IMAGINARY  1.5
 # define MIN_IMAGINARY -1.5
 # define ZOOM 0.4
-# define SHIFT 0.01
+# define SHIFT 0.1
 
 // ==========STRUCTS
 

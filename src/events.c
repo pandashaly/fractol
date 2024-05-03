@@ -36,8 +36,11 @@ int	ft_mouse_hook(int button, int x, int y, t_fractol *fract)
 
 void ft_bullseye(t_fractol *fract, double mouse_x, double mouse_y)
 {
-    fract->shift_r += (mouse_x - 0.3) * SHIFT * fract->zoom;
-    fract->shift_i -= (mouse_y - 0.3) * SHIFT * fract->zoom;
+    fract->shift_r += (mouse_x - 0.5) * SHIFT * fract->zoom;
+    fract->shift_i -= (mouse_y - 0.5) * SHIFT * fract->zoom;
+    printf("\nmouse %f, %f\n", mouse_x, mouse_y);
+    printf("center %d, %d\n", WIDTH / 2, HEIGHT / 2);
+    printf("shift r_i %f, %f\n", fract->shift_r, fract->shift_i);
 }
 
 int	ft_key_press(int key, t_fractol *fract)

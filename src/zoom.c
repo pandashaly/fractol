@@ -10,4 +10,58 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../inc/fractol.h"
 
+int	ft_mouse_hook(int button, int x, int y, t_fractol *fract)
+{
+    double  mouse_x;
+    double  mouse_y;
+
+	mouse_x = (x - WIDTH / 2) / (0.5 * WIDTH * fract->zoom) + fract->shift_i;
+	mouse_y = (y - HEIGHT / 2) / (0.5 * HEIGHT * fract->zoom) + fract->shift_i;
+	if (button == M_ZOOM_IN)
+    {
+		fract->zoom += ZOOM;
+        ft_bullseye(fract, mouse_x, mouse_y);
+        ft_init_fractol(fract);
+    }
+	else if (button == M_ZOOM_OUT)
+    {
+		fract->zoom -= ZOOM;
+        ft_bullseye(fract, mouse_x, mouse_y);
+        ft_init_fractol(fract);
+    }
+	return (0);
+}
+
+void ft_bullseye(t_fractol *fract, double mouse_x, double mouse_y)
+{
+    fract->shift_r += (mouse_x - 0.5) * SHIFT * fract->zoom;
+    fract->shift_i -= (mouse_y - 0.5) * SHIFT * fract->zoom;
+    printf("\nmouse %f, %f\n", mouse_x, mouse_y);
+    printf("center %d, %d\n", WIDTH / 2, HEIGHT / 2);
+    printf("shift r_i %f, %f\n", fract->shift_r, fract->shift_i);
+}
+
+void	zoom_in(t_fractol *fract, double mouse_x, double mouse_y)
+{
+	double	zoom_factor;
+
+	zoom_factor = 0.95;
+
+  //changing the oom factor to keep cursur in same place
+	fract->shift_r += (mouse_x - fract->shift_r) * (1 - zoom_factor);
+	fract->shift_i += (mouse_y - fract->shift_i) * (1 - zoom_factor);
+	fract->zoom *= zoom_factor;
+}
+
+void	zoom_out(t_fractol *fract, double mouse_x, double mouse_y)
+{
+	double	zoom_factor;
+
+	zoom_factor = 1.01;
+
+	fract->shift_r += (mouse_x - fract->shift_r) * (1 - zoom_factor);
+	fract->shift_i += (mouse_y - fract->shift_i) * (1 - zoom_factor);
+	fract->zoom *= zoom_factor;
+}

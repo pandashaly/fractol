@@ -28,7 +28,7 @@ t_rbg	classic(float x)
 	t_rbg	color;
 
 	x *= PI * 2.0;
-	color.r = (int)(0.5 + sin(x) * 127.5);
+	color.r = (int)(0.5 + sin(x) * 255);
 	color.g = (int)(0.5 + sin(x + 1.0) * 127.5);
 	color.b = (int)(0.5 + sin(x + 2.0) * 127.5);
 	return (color);

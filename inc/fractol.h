@@ -30,12 +30,12 @@
 # include <X11/keysym.h>
 
 // ========WINDOW SIZE
-# define WIDTH 1920
-# define HEIGHT 1080
+//# define WIDTH 1920
+//# define HEIGHT 1080
 # define M_ITER 300
 
-//# define WIDTH 1366
-//# define HEIGHT 768
+# define WIDTH 1366
+# define HEIGHT 768
 // ========COLORS
 # define BLACK			0x000000
 # define WHITE			0xFFFFFF
@@ -87,6 +87,8 @@
 # define MIN_IMAGINARY -1.5
 # define ZOOM 0.4
 # define SHIFT 0.1
+# define MIN_ZOOM 0.001
+# define MAX_ZOOM 1000.0
 
 // ==========STRUCTS
 
@@ -144,6 +146,11 @@ typedef struct s_fractol
 
 }	t_fractol;
 
+//t_rbg ultrafractal(float x);
+//t_rbg hex_to_rgb(int hex);
+t_rbg color_interpolate(t_rbg c1, t_rbg c2, t_rbg c3, t_rbg c4, float x);
+void	zoom_in(t_fractol *fract, double mouse_x, double mouse_y);
+void	zoom_out(t_fractol *fract, double mouse_x, double mouse_y);
 void    ft_bullseye(t_fractol *fract, double mouse_x, double mouse_y);
 t_palette	*get_palettes(void);
 t_rbg	color_map(float t, int colorscheme);

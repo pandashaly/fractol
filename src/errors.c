@@ -21,7 +21,7 @@ void	ft_readme(void)
 	ft_printf("  Press keys: W, A, S, D or Left, Right, Up, Down arrows\n");
 	ft_printf("To zoom in:  Scroll mouse wheel up\n");
 	ft_printf("To zoom out:  Scroll mouse wheel down\n");
-	ft_printf("To switch colours:  Press: Space bar\n");
+	ft_printf("To cycle colours:  Press: Space bar\n");
 	ft_printf("To increase iterations:	Press key: + (from the number pad)\n");
 	ft_printf("To decrease iterations:  Press key: -\n");
 	ft_printf("To rotate Julia:	Mouse left or right click\n");
@@ -29,7 +29,7 @@ void	ft_readme(void)
 	ft_printf("\nTry: <./fractal julia -0.4 +0.6> or\n");
 	ft_printf("<./fractol julia -0.835 -0.2321>\n");
 	ft_printf("\nWARNING: Attempting to resize or ");
-	ft_printf("maximize the window will lose you to the BLACKHOLE!\n");
+	ft_printf("maximize the window will get you fractol BLACKHOLED!\n");
 }
 
 void	ft_malloc_err(void)

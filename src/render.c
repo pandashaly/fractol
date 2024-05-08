@@ -33,18 +33,18 @@ void	ft_draw(t_fractol *fract, int x, int y, int i)
 	rbg = 0;
 	if (fract->diff_colorscheme)
 	{
-    if (i == M_ITER)
-    {
+        if (i == M_ITER)
+        {
 			rbg = blend_colours(BLACK, fract->color, (double)i / M_ITER);
-		  ft_put_pixel(fract, x, y, rbg);
-    }
-    else 
-    {
+		    ft_put_pixel(fract, x, y, rbg);
+        }
+        else 
+        {
 		  t = (double)i / M_ITER;
 		  color = color_map(t, fract->colorscheme);
 		  rbg = (color.r << 16) | (color.g << 8) | color.b;
 		  ft_put_pixel(fract, x, y, rbg);
-    }
+        }
 	}
 	else
 	{

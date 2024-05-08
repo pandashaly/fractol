@@ -18,6 +18,7 @@ int	main(int ac, char **av)
 
 	if (ac >= 2)
 	{
+        ft_readme();
 		if ((ac == 2 && (!ft_strncmp(av[1], "m", 1)))
 			|| (ac == 2 && !ft_strncmp(av[1], "b", 1)))
 			ft_2fract_args(&fract, av[1]);

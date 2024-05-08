@@ -38,18 +38,3 @@ void	ft_2fract_args(t_fractol *fract, char *av1)
 	else if (!ft_strncmp(av1, "b", 2))
 		ft_strcpy(fract->name, "Burning Ship");
 }
-
-/*void  ft_args_checks(char *name, int ac, char **av)
-{
-	if (ac == 2 && (!ft_strncmp(av[1], "m", 1)
-		|| (ac == 4 && !ft_strncmp(av[1], "j", 1))))
-	{
-		ft_readme();
-		if (!ft_strncmp(av[1], "m", 1))
-			ft_strcpy(fract->name, "Mandelbrot");
-		else if (!ft_strncmp(av[1], "j", 1))
-			ft_strcpy(fract->name, "Julia");
-	}
-	else
-		ft_arg_err();
-}*/

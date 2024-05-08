@@ -15,7 +15,6 @@
 
 // =======LIBRARIES
 # include "../libs/mlx/mlx.h"
-//# include "colors.h"
 # include <math.h>
 # include "../libs/libft/inc/libft.h"
 # include "../libs/libft/inc/ft_printf.h"
@@ -148,6 +147,7 @@ typedef struct s_fractol
 
 //t_rbg ultrafractal(float x);
 //t_rbg hex_to_rgb(int hex);
+void    ft_julia_zoom(t_fractol *fract, double mouse_x, double mouse_y);
 t_rbg color_interpolate(t_rbg c1, t_rbg c2, t_rbg c3, t_rbg c4, float x);
 void	zoom_in(t_fractol *fract, double mouse_x, double mouse_y);
 void	zoom_out(t_fractol *fract, double mouse_x, double mouse_y);
@@ -173,13 +173,11 @@ int		ft_julia(t_complex *z, t_complex *c);
 void	ft_draw(t_fractol *fract, int x, int y, int i);
 void	ft_init_canvas(t_fractol *fract);
 void	ft_init_fractol(t_fractol *fract);
-// void  ft_init_mandelbrot(t_fractol *fract);
 int		blend_colours(int colour1, int colour2, double t);
 void	ft_init_julia(t_fractol *fract, double julia_r, double julia_i);
 void	ft_put_pixel(t_fractol *fract, int x, int y, int rgb);
 void	ft_init_window(t_fractol *fract);
 void	ft_arg_err(void);
-// void	ft_args_checks(char *name, int ac, char **av);
 void	ft_keyhooks(t_fractol *fract);
 void	ft_init_image(t_fractol *fract);
 void	ft_readme(void);
@@ -187,6 +185,5 @@ void	ft_render(t_fractol *fract);
 int		ft_esc_key(int key, t_fractol *fract);
 int		ft_close_window(t_fractol *fract);
 int		ft_mouse_hook(int button, int x, int y, t_fractol *fract);
-// int   color_map(t_fractol *fract, int w, int h);
 
 #endif

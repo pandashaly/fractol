@@ -30,18 +30,6 @@ int	blend_colours(int colour1, int colour2, double t)
 	return ((r << 16) | (g << 8) | b);
 }
 
-/*int color_map(int i) {
-	double t = (double)i / M_ITER;
-
-	// Linear interpolation between black (0) and white (1)
-	int red = (int)(255 * t);
-	int green = (int)(255 * t);
-	int blue = (int)(255 * t);
-
-	// Combine rbg components into a single color value
-	return (red << 16) | (green << 8) | blue;
-}*/
-
 void	ft_psychedellic(t_fractol *fract)
 {
 	static int	color_arr[] = {BLACK, RED, GREEN, YELLOW, BLUE,
@@ -64,23 +52,7 @@ t_rbg	color_map(float t, int colorscheme)
 	return ((t_rbg){255, 0, 0});
 }
 
-/*t_palette	*get_palettes(void)
-{
-	static t_palette	array[5];
-
-	array[0] =
-		(t_palette){5, 0, {BLACK, RED, GREEN, YELLOW, BLUE}};
-	array[1] =
-		(t_palette){5, 0, {MAGENTA, PURPLE, BLUE, WHITE, PASTELPINK}};
-	array[2] =
-		(t_palette){5, 0, {ELECTRIC, WHITE, CYAN, PINK, LILAC}};
-	array[3] =
-		(t_palette){7, 10, {BLACK, ORANGE, LIGHTNING, LAVA, BLUE, PURPLE, LIGHTNING}};
-	array[4] = (t_palette){0, 0, {0}};
-	return (array);
-}
-
-t_rbg   smooth_operator(double i, t_palette *p)
+/*t_rbg   smooth_operator(double i, t_palette *p)
 {
     double zn = log(p->c.r * p->c.r + p->c.i * p->c.i) / 2.0f;
     double nu = log(zn / log(2)) / log(2);

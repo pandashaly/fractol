@@ -26,9 +26,10 @@ void	ft_init_burningship(t_fractol *fract)
 		y = 0;
 		while (y < HEIGHT)
 		{
-			c.real = (double)x / WIDTH * (MAX_REAL - MIN_REAL) + MIN_REAL;
-			c.delulu = (double)y / HEIGHT * (MAX_IMAGINARY
-					- MIN_IMAGINARY) + MIN_IMAGINARY;
+			c.real = (double)x / WIDTH * (MAX_REAL - MIN_REAL)
+                / fract->zoom + MIN_REAL + fract->shift_r;
+			c.delulu = (double)y / HEIGHT * (MAX_IMAGINARY - MIN_IMAGINARY)
+                / fract->zoom + MIN_IMAGINARY + fract->shift_i;
 			z.real = 0;
 			z.delulu = 0;
 			i = ft_burningship(&z, &c);

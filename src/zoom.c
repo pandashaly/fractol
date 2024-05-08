@@ -43,26 +43,3 @@ void ft_bullseye(t_fractol *fract, double mouse_x, double mouse_y)
     printf("center %d, %d\n", WIDTH / 2, HEIGHT / 2);
     printf("shift r_i %f, %f\n", fract->shift_r, fract->shift_i);
 }
-
-void	zoom_in(t_fractol *fract, double mouse_x, double mouse_y)
-{
-	double	zoom_factor;
-
-	zoom_factor = 0.95;
-
-  //changing the oom factor to keep cursur in same place
-	fract->shift_r += (mouse_x - fract->shift_r) * (1 - zoom_factor);
-	fract->shift_i += (mouse_y - fract->shift_i) * (1 - zoom_factor);
-	fract->zoom *= zoom_factor;
-}
-
-void	zoom_out(t_fractol *fract, double mouse_x, double mouse_y)
-{
-	double	zoom_factor;
-
-	zoom_factor = 1.01;
-
-	fract->shift_r += (mouse_x - fract->shift_r) * (1 - zoom_factor);
-	fract->shift_i += (mouse_y - fract->shift_i) * (1 - zoom_factor);
-	fract->zoom *= zoom_factor;
-}

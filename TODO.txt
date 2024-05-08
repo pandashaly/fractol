@@ -2,13 +2,13 @@
 [x] offset? fix mandlebrot kind of fixed resolution 
 [x] make responsive design + scaling element for diff resolutions
 [x] add zoom in - zoom out
-[] add color blend function to keyhook
+[x] add color blend function to keyhook
 [x] get julia to work
 [x] more detail
 [x] zoom in infinately within constraints of computer 
 [x] init data??
 [x] split up mandelbrot function into 3
-[] add mousehook - print coordinates of mouse on screen
+[x] add mousehook - print coordinates of mouse on screen
 [x] implement burning ship
 [x] implement feather
 [x] add colorschemes functions
@@ -23,5 +23,5 @@ to fix/finish
 [x] color cycle - ft_psychedelic
 [x] data-init function for mandelbrot and julia
 [x] reset bool to false with 0
-[] MOUSE ZOOM -
+[x] MOUSE ZOOM -
 TRY ZOOM TO MISSLE OF SCREEN

@@ -30,8 +30,8 @@
 # include <X11/keysym.h>
 
 // ========WINDOW SIZE
-# define WIDTH 1920
-# define HEIGHT 1080
+# define WIDTH 800
+# define HEIGHT 600
 # define M_ITER 500
 
 //# define WIDTH 1366
@@ -85,7 +85,7 @@
 # define MIN_REAL      -2.5
 # define MAX_IMAGINARY  1.5
 # define MIN_IMAGINARY -1.5
-# define ZOOM 0.4
+# define ZOOM 1.4
 # define SHIFT 0.1
 # define MIN_ZOOM 0.001
 # define MAX_ZOOM 1000.0

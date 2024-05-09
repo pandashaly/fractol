@@ -47,8 +47,8 @@ t_rbg	color_map(float t, int colorscheme)
 		return (classic(t));
 	else if (colorscheme == 2)
 		return (alternate(t));
-  //else if (colorscheme == 3)
-    //return (ultrafractal(t));
+  else if (colorscheme == 3)
+    return (t_rbg){255, 255, 255}; // Default to white
 	return ((t_rbg){255, 0, 0});
 }
 

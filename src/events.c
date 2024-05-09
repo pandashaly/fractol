@@ -28,6 +28,10 @@ int	ft_key_press(int key, t_fractol *fract)
 		fract->shift_i -= ((MAX_IMAGINARY - MIN_IMAGINARY) / fract->zoom * 0.1);
 	else if (key == XK_Down || key == XK_s)
 		fract->shift_i += ((MAX_IMAGINARY - MIN_IMAGINARY)  / fract->zoom * 0.1);
+  else if (key == XK_KP_Add)
+		fract->iter += 25;
+	else if (key == XK_KP_Subtract)
+		fract->iter -= 25;
 	ft_init_fractol(fract); 						
 	return (0);
 }

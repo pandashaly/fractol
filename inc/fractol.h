@@ -142,6 +142,7 @@ typedef struct s_fractol
     double      zoom;
     double         shift_r;
     double         shift_i;
+  int   iter;
 
 }	t_fractol;
 

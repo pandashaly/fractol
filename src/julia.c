@@ -21,10 +21,10 @@ void	ft_init_julia(t_fractol *fract, double julia_r, double julia_i)
 	int			y;
 
 	x = 0;
-	while (x < WIDTH)
+	while (x++ < WIDTH)
 	{
 		y = 0;
-		while (y < HEIGHT)
+		while (y++ < HEIGHT)
 		{
 			c.real = julia_r;
 			c.delulu = julia_i;
@@ -34,9 +34,7 @@ void	ft_init_julia(t_fractol *fract, double julia_r, double julia_i)
 					- -2.0) / fract->zoom + -2.0 + fract->shift_i;
 			i = ft_julia(fract, &z, &c);
 			ft_draw(fract, x, y, i);
-			y++;
 		}
-		x++;
 	}
 	mlx_put_image_to_window(fract->mlx, fract->win, fract->img.img, 0, 0);
 	ft_UI_instructions(fract);

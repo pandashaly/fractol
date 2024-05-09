@@ -33,14 +33,14 @@ void	ft_draw(t_fractol *fract, int x, int y, int i)
 	rbg = 0;
 	if (fract->diff_colorscheme)
 	{
-		if (i == M_ITER)
+		if (i == fract->iter)
 		{
-			rbg = blend_colours(BLACK, fract->color, (double)i / M_ITER);
+			rbg = blend_colours(BLACK, fract->color, (double)i / fract->iter);
 			ft_put_pixel(fract, x, y, rbg);
 		}
 		else
 		{
-			t = (double)i / M_ITER;
+			t = (double)i / fract->iter;
 			color = color_map(t, fract->colorscheme);
 			rbg = (color.r << 16) | (color.g << 8) | color.b;
 			ft_put_pixel(fract, x, y, rbg);
@@ -48,10 +48,10 @@ void	ft_draw(t_fractol *fract, int x, int y, int i)
 	}
 	else
 	{
-		if (i == M_ITER)
+		if (i == fract->iter)
 			rbg = BLACK;
 		else
-			rbg = blend_colours(BLACK, fract->color, (double)i / M_ITER);
+			rbg = blend_colours(BLACK, fract->color, (double)i / fract->iter);
 		ft_put_pixel(fract, x, y, rbg);
 	}
 }

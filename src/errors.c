@@ -30,7 +30,7 @@ void	ft_readme(void)
 	ft_printf("\nTry: <./fractal julia -0.4 +0.6> or\n");
 	ft_printf("<./fractol julia -0.835 -0.2321>\n");
 	ft_printf("\nWARNING: Attempting to resize or ");
-	ft_printf("maximize the window will get you fractol BLACKHOLED!\n");
+	ft_printf("maximize the window will get you fractol BLACKHOLED!\n\n\n");
 }
 
 void	ft_malloc_err(void)

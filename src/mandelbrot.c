@@ -32,7 +32,7 @@ void	ft_init_mandelbrot(t_fractol *fract)
 					- MIN_IM) / fract->zoom + MIN_IM + fract->shift_i;
 			z.real = 0;
 			z.delulu = 0;
-			i = ft_mandelbrot(&z, &c);
+			i = ft_mandelbrot(fract, &z, &c);
 			ft_draw(fract, x, y, i);
 			y++;
 		}
@@ -41,13 +41,13 @@ void	ft_init_mandelbrot(t_fractol *fract)
 	mlx_put_image_to_window(fract->mlx, fract->window, fract->img.img, 0, 0);
 }
 
-int	ft_mandelbrot(t_complex *z, t_complex *c)
+int	ft_mandelbrot(t_fractol *fract, t_complex *z, t_complex *c)
 {
 	int		i;
 	double	tmp;
 
 	i = 0;
-	while ((z->real * z->real + z->delulu * z->delulu <= 4) && i < M_ITER)
+	while ((z->real * z->real + z->delulu * z->delulu <= 4) && i < fract->iter)
 	{
 		tmp = z->real * z->real - z->delulu * z->delulu + c->real;
 		z->delulu = 2 * z->real * z->delulu + c->delulu;

@@ -18,7 +18,6 @@ int	main(int ac, char **av)
 
 	if (ac >= 2)
 	{
-		ft_readme();
 		if ((ac == 2 && (!ft_strncmp(av[1], "m", 1)))
 			|| (ac == 2 && !ft_strncmp(av[1], "b", 1)))
 			ft_2fract_args(&fract, av[1]);
@@ -27,7 +26,10 @@ int	main(int ac, char **av)
 			ft_4fract_args(&fract, av[1], av[2], av[3]);
 	}
 	else
+	{
+		ft_readme();
 		ft_arg_err();
+	}
 	if (fract.name[0] != '\0')
 	{
 		fract.diff_colorscheme = false;

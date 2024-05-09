@@ -19,16 +19,16 @@
 <td valign="top" align="center"><kbd>&nbsp;esc&nbsp;</kbd></td>
 </tr>
 <tr>
-<td valign="top" height="30px">Reset all the changes made for this map</td>
-<td valign="top" align="center"><kbd>&nbsp;clear&nbsp;</kbd></td>
+<td valign="top" height="30px">Color shifting</td>
+<td valign="top" align="center"><kbd>&nbsp;space&nbsp;</kbd></td>
 </tr>
 <tr>
-<td valign="top" height="30px">Change the display gradient (aka change color)</td>
-<td valign="top" align="center"><kbd>&nbsp;shift&nbsp;</kbd></td>
+<td valign="top" height="30px">Change colorscheme</td>
+<td valign="top" align="center"><kbd>&nbsp;1&nbsp;</kbd><kbd>&nbsp;2&nbsp;</kbd><kbd>&nbsp;3&nbsp;</kbd></td>
 </tr>
 <tr>
-<td valign="top" height="30px">Enable or disable the mouse controls</td>
-<td valign="top" align="center"><kbd>&nbsp;M&nbsp;</kbd> or <kbd>&nbsp;S&nbsp;</kbd></td>
+<td valign="top" height="30px">Reset back to original colorscheme</td>
+<td valign="top" align="center"><kbd>&nbsp;0&nbsp;</kbd></td>
 </tr>
 <tr>
 <td valign="top" height="30px">Increase the global size of the fractal (aka zoom)</td>
@@ -55,32 +55,24 @@
 <td valign="top" align="center"><kbd>&nbsp;►&nbsp;</kbd></td>
 </tr>
 <tr>
-<td valign="top" height="30px">Increase the number of iterations</td>
-<td valign="top" align="center"><kbd>&nbsp;W&nbsp;</kbd></td>
+<td valign="top" height="30px">Increase iterations (in the numberpad)</td>
+<td valign="top" align="center"><kbd>&nbsp;+&nbsp;</kbd></td>
 </tr>
 <tr>
-<td valign="top" height="30px">Decrease the numbre of iterations</td>
-<td valign="top" align="center"><kbd>&nbsp;Q&nbsp;</kbd></td>
-</tr>
-<tr>
-<td valign="top" height="30px">Clockwise rotation on the Z axe</td>
-<td valign="top" align="center"><kbd>&nbsp;T&nbsp;</kbd></td>
-</tr>
-<tr>
-<td valign="top" height="30px">Counter clockwise rotation on the Z axe</td>
-<td valign="top" align="center"><kbd>&nbsp;R&nbsp;</kbd></td>
-</tr>
-<tr>
-<td valign="top" height="30px">Display the Julia fractal</td>
-<td valign="top" align="center"><kbd>&nbsp;1&nbsp;</kdb></td>
+<td valign="top" height="30px">Decrease iterations (in the numberpad)</td>
+<td valign="top" align="center"><kbd>&nbsp;-&nbsp;</kbd></td>
 </tr>
 <tr>
 <td valign="top" height="30px">Display the Mandelbrot fractal</td>
-<td valign="top" align="center"><kbd>&nbsp;2&nbsp;</kbd></td>
+<td valign="top" align="center"><kbd>&nbsp;m&nbsp;</kdb></td>
 </tr>
 <tr>
-<td valign="top" height="30px">Display the Tricorn fractal</td>
-<td valign="top" align="center"><kbd>&nbsp;3&nbsp;</kbd></td>
+<td valign="top" height="30px">Display the Julia fractal</td>
+<td valign="top" align="center"><kbd>&nbsp;j&nbsp;</kbd></td>
+</tr>
+<tr>
+<td valign="top" height="30px">Display the Burning Ship fractal</td>
+<td valign="top" align="center"><kbd>&nbsp;b&nbsp;</kbd></td>
 </tr>
 </tbody>
 </table>
@@ -100,19 +92,11 @@
 </thead>
 <tbody>
 <tr>
-<td valign="top" height="30px">Increase the global size of the fractal at the position of the cursor</td>
-<td valign="top" align="center"><kbd>&nbsp;left button&nbsp;</kbd></td>
-</tr>
-<tr>
-<td valign="top" height="30px">Decrease the global size of the fractal at the position of the cursor</td>
-<td valign="top" align="center"><kbd>&nbsp;right button&nbsp;</kbd></td>
-</tr>
-<tr>
-<td valign="top" height="30px">Increase the global size of the fractal (aka zoom)</td>
+<td valign="top" height="30px">Zoom in</td>
 <td valign="top" align="center"><kbd>&nbsp;scroll up&nbsp;</kbd></td>
 </tr>
 <tr>
-<td valign="top" height="30px">Decrease the global size of the fractal (aka unzoom)</td>
+<td valign="top" height="30px">Zoom out</td>
 <td valign="top" align="center"><kbd>&nbsp;scroll down&nbsp;</kbd></td>
 </tr>
 </tbody>

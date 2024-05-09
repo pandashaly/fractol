@@ -15,8 +15,8 @@
 [x] add data init for maxr minr maxi mini
 []add julia presets randomized julia set funcition
 [] keyhook j for julia random function
-[] add increase / decrease iterations hook function
-[] add more colors / color schemes?
+[x] add increase / decrease iterations hook function
+[x] add more colors / color schemes?
 [] keyhooks m and b to switch between fractals
 [x] add random color rotation
 [x] IMPORTANT -- make ft_render function so you cna render again when zooming

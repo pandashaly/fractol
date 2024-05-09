@@ -127,7 +127,7 @@ typedef struct t_complex
 typedef struct s_fractol
 {
 	void		*mlx;
-	void		*window;
+	void		*win;
 	char		name[15];
 	t_img		img;
 	double		julia_i;
@@ -147,6 +147,7 @@ typedef struct s_fractol
 
 //t_rbg ultrafractal(float x);
 //t_rbg hex_to_rgb(int hex);
+void    ft_UI_instructions(t_fractol *fract);
 void	ft_julia_zoom(t_fractol *fract, double mouse_x, double mouse_y);
 //t_rbg	color_interpolate(t_rbg c1, t_rbg c2, t_rbg c3, t_rbg c4, float x);
 void	zoom_in(t_fractol *fract, double mouse_x, double mouse_y);

@@ -29,7 +29,7 @@ void	ft_init_image(t_fractol *fract)
 	fract->img.img = mlx_new_image(fract->mlx, WIDTH, HEIGHT);
 	if (!fract->img.img)
 	{
-		mlx_destroy_window(fract->mlx, fract->window);
+		mlx_destroy_window(fract->mlx, fract->win);
 		mlx_destroy_display(fract->mlx);
 		free(fract->mlx);
 		ft_malloc_err();
@@ -39,15 +39,15 @@ void	ft_init_image(t_fractol *fract)
 			&fract->img.line_length,
 			&fract->img.endian);
 	mlx_put_image_to_window(fract->mlx,
-		fract->window, fract->img.img, 0, 0);
+		fract->win, fract->img.img, 0, 0);
 }
 
 void	ft_init_window(t_fractol *fract)
 {
-	fract->window = mlx_new_window(fract->mlx,
+	fract->win = mlx_new_window(fract->mlx,
 			WIDTH, HEIGHT,
 			fract->name);
-	if (!fract->window)
+	if (!fract->win)
 	{
 		mlx_destroy_display(fract->mlx);
 		free(fract->mlx);

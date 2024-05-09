@@ -42,7 +42,7 @@ void	ft_malloc_err(void)
 int	ft_close_window(t_fractol *fract)
 {
 	mlx_destroy_image(fract->mlx, fract->img.img);
-	mlx_destroy_window(fract->mlx, fract->window);
+	mlx_destroy_window(fract->mlx, fract->win);
 	mlx_destroy_display(fract->mlx);
 	free(fract->mlx);
 	exit(EXIT_SUCCESS);

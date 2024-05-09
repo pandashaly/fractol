@@ -104,4 +104,4 @@
 
 ## Contact & contribute
 
-If you want to contact me, or fix/improve Fractol, just send me a mail at **bsouchet@student.42.fr**
+If you want to contact me, or fix/improve Fractol, just send me a mail at **ssottori@student.42london.fr**

@@ -39,6 +39,7 @@ void	ft_init_mandelbrot(t_fractol *fract)
 		x++;
 	}
 	mlx_put_image_to_window(fract->mlx, fract->win, fract->img.img, 0, 0);
+	ft_UI_instructions(fract);
 }
 
 int	ft_mandelbrot(t_fractol *fract, t_complex *z, t_complex *c)

@@ -72,5 +72,5 @@ void	ft_init_canvas(t_fractol *fract)
 	ft_init_image(fract);
 	ft_init_data(fract);
 	ft_keyhooks(fract);
-	ft_printf("Yay done!");
+	ft_printf("Yay done! I hope you enjoyed exploring my fractol");
 }

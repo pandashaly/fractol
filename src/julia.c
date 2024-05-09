@@ -39,8 +39,7 @@ void	ft_init_julia(t_fractol *fract, double julia_r, double julia_i)
 		x++;
 	}
 	mlx_put_image_to_window(fract->mlx, fract->win, fract->img.img, 0, 0);
-    ft_UI_instructions(fract);
-
+	ft_UI_instructions(fract);
 }
 
 int	ft_julia(t_fractol *fract, t_complex *z, t_complex *c)
@@ -57,22 +56,4 @@ int	ft_julia(t_fractol *fract, t_complex *z, t_complex *c)
 		i++;
 	}
 	return (i);
-}
-
-//void    ft_julia_cycle(t_fractol *fract)
-//{
-void	ft_UI_instructions(t_fractol *fract)
-{
-	mlx_string_put(fract->mlx, fract->win, 23, 23, LILAC, "Controls Keys");
-	mlx_string_put(fract->mlx, fract->win, 23, 53, LILAC, "Move = ^ v < > OR w a s d");
-	mlx_string_put(fract->mlx, fract->win, 23, 73, LILAC, "Up Iters = +");
-	mlx_string_put(fract->mlx, fract->win, 23, 93, LILAC, "Down Iters = -");
-	mlx_string_put(fract->mlx, fract->win, 23, 113, LILAC, "Color = SPACE");
-    mlx_string_put(fract->mlx, fract->win, 23, 133, LILAC, "Colorscheme = 1 2 3");
-	mlx_string_put(fract->mlx, fract->win, 23, 153, LILAC, "Reset color = 0");
-	mlx_string_put(fract->mlx, fract->win, 23, 173, LILAC, "Zoom = SCROLL");
-	//mlx_string_put(fract->mlx, fract->win, 23, (HEIGHT - 123), LILAC, "Fract Explorer");
-	//mlx_string_put(fract->mlx, fract->win, 23, (HEIGHT - 95), LILAC, "j = Julia");
-	//mlx_string_put(fract->mlx, fract->win, 23, (HEIGHT - 75), LILAC, "m = Mandelbrot");
-	//mlx_string_put(fract->mlx, fract->win, 23, (HEIGHT - 55), LILAC, "b = Burning Ship");
 }

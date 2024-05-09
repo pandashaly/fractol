@@ -33,7 +33,7 @@ void	ft_readme(void)
 	ft_printf("maximize the window will get you fractol BLACKHOLED!\n\n\n");
 }
 
-void	ft_UI_instructions(t_fractol *fract)
+void	ft_ui_instructions(t_fractol *fract)
 {
 	mlx_string_put(fract->mlx, fract->win, 23, 23, LILAC, "Controls Keys");
 	mlx_string_put(fract->mlx, fract->win, 23, 53, LILAC,
@@ -45,4 +45,5 @@ void	ft_UI_instructions(t_fractol *fract)
 		"Colorscheme = 1 2 3");
 	mlx_string_put(fract->mlx, fract->win, 23, 153, LILAC, "Reset color = 0");
 	mlx_string_put(fract->mlx, fract->win, 23, 173, LILAC, "Zoom = SCROLL");
+	mlx_string_put(fract->mlx, fract->win, 23, 193, LILAC, "Exit = ESC");
 }

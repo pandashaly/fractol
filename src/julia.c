@@ -37,7 +37,7 @@ void	ft_init_julia(t_fractol *fract, double julia_r, double julia_i)
 		}
 	}
 	mlx_put_image_to_window(fract->mlx, fract->win, fract->img.img, 0, 0);
-	ft_UI_instructions(fract);
+	ft_ui_instructions(fract);
 }
 
 int	ft_julia(t_fractol *fract, t_complex *z, t_complex *c)

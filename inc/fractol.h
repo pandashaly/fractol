@@ -51,7 +51,7 @@
 # define LIGHTNING		0x00CCFF
 # define LAVA			0xFF3300
 # define YELLOW			0xFFFF00
-# define PASTELYELLOW	0xFFFF99
+# define PASTELYELLOW	0xFF5F15
 # define PASTELPINK		0xFFB6C1
 # define LILAC          0xEFB1FF
 
@@ -147,7 +147,7 @@ typedef struct s_fractol
 
 //t_rbg ultrafractal(float x);
 //t_rbg hex_to_rgb(int hex);
-void    ft_UI_instructions(t_fractol *fract);
+void    ft_ui_instructions(t_fractol *fract);
 void	ft_julia_zoom(t_fractol *fract, double mouse_x, double mouse_y);
 //t_rbg	color_interpolate(t_rbg c1, t_rbg c2, t_rbg c3, t_rbg c4, float x);
 void	zoom_in(t_fractol *fract, double mouse_x, double mouse_y);

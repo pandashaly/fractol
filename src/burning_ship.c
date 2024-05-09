@@ -37,7 +37,7 @@ void	ft_init_burningship(t_fractol *fract)
 		}
 	}
 	mlx_put_image_to_window(fract->mlx, fract->win, fract->img.img, 0, 0);
-	ft_UI_instructions(fract);
+	ft_ui_instructions(fract);
 }
 
 int	ft_burningship(t_fractol *fract, t_complex *z, t_complex *c)

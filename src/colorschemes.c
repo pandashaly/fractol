@@ -19,8 +19,8 @@ void	ft_set_colorscheme(t_fractol *fract, int key)
 		fract->colorscheme = key;
 		fract->diff_colorscheme = true;
 	}
-    else if (key == 0)
-        fract->diff_colorscheme = false;
+	else if (key == 0)
+		fract->diff_colorscheme = false;
 }
 
 t_rbg	classic(float x)

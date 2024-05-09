@@ -31,7 +31,7 @@
 // ========WINDOW SIZE
 # define WIDTH 800
 # define HEIGHT 600
-# define M_ITER 500
+# define M_ITER 1000
 
 //# define WIDTH 1366
 //# define HEIGHT 768
@@ -82,8 +82,8 @@
 // =========SIZES
 # define MAX_REAL       1.5
 # define MIN_REAL      -2.5
-# define MAX_IMAGINARY  1.5
-# define MIN_IMAGINARY -1.5
+# define MAX_IM  1.5
+# define MIN_IM -1.5
 # define ZOOM 1.4
 # define SHIFT 0.1
 # define MIN_ZOOM 0.001
@@ -93,9 +93,9 @@
 
 typedef struct s_palette
 {
-    int cycle;
-    int colors[16];
-}   t_palette;
+	int	cycle;
+	int	colors[16];
+}	t_palette;
 
 typedef struct s_data
 {
@@ -139,21 +139,20 @@ typedef struct s_fractol
 	int			color;
 	int			colorscheme;
 	bool		diff_colorscheme;
-    double      zoom;
-    double         shift_r;
-    double         shift_i;
-  int   iter;
-
+	double		zoom;
+	double		shift_r;
+	double		shift_i;
+	int			iter;
 }	t_fractol;
 
 //t_rbg ultrafractal(float x);
 //t_rbg hex_to_rgb(int hex);
-void    ft_julia_zoom(t_fractol *fract, double mouse_x, double mouse_y);
-t_rbg color_interpolate(t_rbg c1, t_rbg c2, t_rbg c3, t_rbg c4, float x);
+void	ft_julia_zoom(t_fractol *fract, double mouse_x, double mouse_y);
+//t_rbg	color_interpolate(t_rbg c1, t_rbg c2, t_rbg c3, t_rbg c4, float x);
 void	zoom_in(t_fractol *fract, double mouse_x, double mouse_y);
 void	zoom_out(t_fractol *fract, double mouse_x, double mouse_y);
-void    ft_bullseye(t_fractol *fract, double mouse_x, double mouse_y);
-t_palette	*get_palettes(void);
+void	ft_bullseye(t_fractol *fract, double mouse_x, double mouse_y);
+//t_palette	*get_palettes(void);
 t_rbg	color_map(float t, int colorscheme);
 t_rbg	classic(float x);
 t_rbg	alternate(float x);

@@ -59,8 +59,8 @@ void	ft_init_data(t_fractol *fract)
 {
 	fract->zoom = 1;
 	fract->shift_r = 0;
-  fract->shift_i = 0;
-  fract->iter = 200;
+	fract->shift_i = 0;
+	fract->iter = 200;
 }
 
 void	ft_init_canvas(t_fractol *fract)

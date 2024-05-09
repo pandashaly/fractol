@@ -17,13 +17,13 @@ void	ft_readme(void)
 	ft_printf("\nWelcome to my fractal!\n");
 	ft_printf("Unfortunately, MiniLibX's limited");
 	ft_printf(" capabilities result in slow rendering 😞\n");
-    ft_printf("Bigger the window or higher max iterations,");
-    ft_printf("the slower it will be.\n");
+	ft_printf("Bigger the window or higher max iterations,");
+	ft_printf("the slower it will be.\n");
 	ft_printf("\nTo move the fractal: w, a, s, d or arrow keys\n");
 	ft_printf("To zoom in:  Scroll mouse wheel up\n");
 	ft_printf("To zoom out:  Scroll mouse wheel down\n");
 	ft_printf("To cycle colours:  Space bar\n");
-    ft_printf("To change colorschemes: Press 1, 2, or 3 - or 0 to reset.\n");
+	ft_printf("To change colorschemes: Press 1, 2, or 3 - or 0 to reset.\n");
 	ft_printf("To increase iterations:	+ (from the number pad)\n");
 	ft_printf("To decrease iterations:  -\n");
 	ft_printf("To quit:  ESC or click X on window, or ^C in terminal\n");

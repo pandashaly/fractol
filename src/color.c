@@ -47,17 +47,17 @@ t_rbg	color_map(float t, int colorscheme)
 		return (classic(t));
 	else if (colorscheme == 2)
 		return (alternate(t));
-  else if (colorscheme == 3)
-    return (t_rbg){255, 255, 255}; // Default to white
+	else if (colorscheme == 3)
+		return ((t_rbg){255, 255, 255});
 	return ((t_rbg){255, 0, 0});
 }
 
 /*t_rbg   smooth_operator(double i, t_palette *p)
 {
-    double zn = log(p->c.r * p->c.r + p->c.i * p->c.i) / 2.0f;
-    double nu = log(zn / log(2)) / log(2);
-    double t = i + 1 - nu;
-    if (t < 0)
-        t = 0;
-    return (t, , p);
+	double zn = log(p->c.r * p->c.r + p->c.i * p->c.i) / 2.0f;
+	double nu = log(zn / log(2)) / log(2);
+	double t = i + 1 - nu;
+	if (t < 0)
+		t = 0;
+	return (t, , p);
 }*/

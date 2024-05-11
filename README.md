@@ -1,4 +1,21 @@
-# Fractol
+<p align="center">
+  <img src="https://github.com/mcombeau/mcombeau/blob/main/42_badges/fract-ole.png" alt="Fract'ol fract-ol 42 project badge"/>
+</p>
+
+<h1 align="center">
+ 42 Project - Fractol
+</h1>
+
+<p align="center">
+	<img alt="Fractol language" src="https://img.shields.io/github/languages/top/mcombeau/fract-ol?style=flat-square" />
+	<img alt="Grade" src="https://img.shields.io/badge/:-125%25-success?style=flat-square&logo=42"/>
+  <img alt="License" src="https://img.shields.io/github/license/byaliego/42-project-badges?color=5BCFFF"/>
+</p>
+
+</p>
+
+*Fractol is a graphical project using 42's mlx library to create and explore fractals. This was my favorite project in the 42 core curriculum so far!*
+
 
 ## Keyboard shortcuts
 

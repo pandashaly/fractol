@@ -119,6 +119,11 @@
 </tbody>
 </table>
 
+## Resources
+
+https://davidsaltacc.github.io/pages/generative-art/fractals-v4
+https://complex-analysis.com/content/mandelbrot_set.html#:~:text=Essentially%2C%20the%20Mandelbrot%20set%20is,growing%20values)%20lie%20outside%20it.
+
 ## Contact & contribute
 
 If you want to contact me, or fix/improve Fractol, just send me a mail at **ssottori@student.42london.com**
